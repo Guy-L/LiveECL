@@ -1,0 +1,11 @@
+void main()
+{
+    stackAlloc(0);
+    etNew(0);
+    etAim(0, 1);
+LoopLabel:
+    etOn(0);
+    wait(100);
+    jmp(LoopLabel, 0);
+    ins_10();
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Live ECL Interpreter</title>
+		<link rel="stylesheet" type="text/css" href="index.css">
+		<link rel="icon" href="assets/fav.ico">
+
+		<script src="libs/codemirror/lib/codemirror.js"></script>
+		<script src="libs/codemirror/mode/clike/clike.js"></script>
+		<link  href="libs/codemirror/lib/codemirror.css" rel="stylesheet">
+		<link  href="libs/codemirror/theme/idea.css" rel="stylesheet">
+
+		<script src="libs/jquery-3.4.1.js"></script>
+		<script src="libs/jquery.hotkeys.js"></script>
+		<script src="libs/socket.io.js"></script>
+
+		<script src="index.js"></script>
+	</head>
+
+	<body>
+		<div id="header">
+			<img src="assets/logo.png" alt="logo">
+		</div>
+		<div id="info">
+			<div id="button">Automatic</div>
+			<select id="ver">
+				<option value="06"    disabled>6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Embodiment of Scarlet Devil</option>
+				<option value="07"    disabled>7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Perfect Cherry Blossom</option>
+				<option value="08"    disabled>8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Imperishable Night</option>
+				<option value="09"    disabled>9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Phantasmagoria of Flower View</option>
+				<option value="10"   disabled>10&nbsp;&nbsp;&nbsp;&nbsp;- Mountain of Faith</option>
+				<option value="11"   disabled>11&nbsp;&nbsp;&nbsp;&nbsp;- Subterranean Animism</option>
+				<option value="12"   disabled>12&nbsp;&nbsp;&nbsp;&nbsp;- Undefined Fantastic Object</option>
+				<option value="13"   selected>13&nbsp;&nbsp;&nbsp;&nbsp;- Ten Desires</option>
+				<option value="14"   disabled>14&nbsp;&nbsp;&nbsp;&nbsp;- Double Dealing Character</option>
+				<option value="14.3" disabled>14.3 - Impossible Spell Card</option>
+				<option value="15"   disabled>15&nbsp;&nbsp;&nbsp;&nbsp;- Legacy of Lunatic Kingdom</option>
+				<option value="16"   disabled>16&nbsp;&nbsp;&nbsp;&nbsp;- Hidden Star in Four Seasons</option>
+				<option value="16.5" disabled>16.5 - Violet Detector</option>
+				<option value="17"   disabled>17&nbsp;&nbsp;&nbsp;&nbsp;- Wily Beast and Weakest Creature</option>
+			</select>
+			<select id="diff">
+				<option value=0>Easy</option>
+				<option value=1 selected>Normal</option>
+				<option value=2>Hard</option>
+				<option value=3>Lunatic &nbsp;</option>
+			</select>
+			<div class="opt"><input type="checkbox" id="old">Old Maps</div>
+			<div class="opt"><input type="checkbox" id="s">Basic</div>
+			<div class="opt"><input type="text" id="entry" value="main" maxlength="25"> Entry</div>
+			<div id="display">More..</div>
+		</div>
+		<div id="action">
+			<div id="editor">
+				<textarea id="edit">
+void main()
+{
+    etNew(0);
+    etSprite(0, ET_RICE, COLOR16_PINK);
+
+    etAim(0, AIM_AT);
+    etCount(0, 2:4:6:8, 2:4:6:8);
+    etSpeed(0, 3f, 2f);
+    etAngle(0, 0f, rad(15));
+
+    etEx(0, 0, EX_DIST, NEG, NEG, NEGF, NEGF);
+
+    while(1)
+    {
+        etOffset(0, RANDF2*40f, RANDF2*40f);
+        etOn(0);
+        wait(75);
+    }
+}</textarea>
+			<table id="editPanel">
+				<tr>
+					<th class="panelButton" id="new"><img src="assets/new.png" alt="N"></th>
+					<th class="panelButton" id="theme"><img src="assets/night.png" alt="T"></th>
+					<th class="panelButton" id="upload"><img src="assets/upload.png" alt="U"></th>
+					<th class="panelButton" id="download"><img src="assets/download.png" alt="D"></th>
+				</tr>
+			</table>
+			</div>
+			<div id="game">
+				<iframe id="gameWindow" src="game.html"></iframe>
+				<table id="gamePanel">
+					<tr>
+						<th style="width:35px"></th>
+						<th class="panelButton" id="fullscreen"><img src="assets/fullscreen.png" alt="F"></th>
+						<th class="panelButton" id="windowOpen"><img src="assets/external.png" alt="E"></th>
+					</tr>
+					<tr>
+						<th class="panelButton" id="switch"><img src="assets/switch.png" alt="S"></th>
+						<th class="panelButton" id="clear"><img src="assets/clear.png" alt="C"></th>
+						<th class="panelButton" id="restart"><img src="assets/restart.png" alt="R"></th>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div id="terminal"><br><b>LiveECL v1.4.1:</b> now with fancy editor!<br><b>Alt+S:</b> switches focus, &nbsp;&nbsp;&nbsp; <b>Alt+R:</b> restarts the game,<br><b>Alt+C:</b> clears all bullets, <b>Alt+F:</b> fullscreen.<br><br></div>
+	</body>
+</html>

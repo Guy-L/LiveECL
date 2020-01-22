@@ -1,0 +1,1905 @@
+anim { "enemy.anm"; "st01enm.anm"; }
+ecli { "default.ecl"; "st01bs.ecl"; }
+
+void GirlA01()
+{
+    stackAlloc(0);
+    setHurtbox(24.0f, 24.0f);
+    setHitbox(16.0f, 16.0f);
+    moveVel(1.1780972f, 4.0f);
+    moveVelTime(60, 1, 1.5707964f, 0.0f);
+!HL
+    callAsync("GirlA01_at");
+!L
+    callAsync("GirlA01_at_l");
+!*
+    wait(60);
+    pushf(%ANGLE_PLAYER);
+    pushf(%RANDRAD);
+    pushf(20.0f);
+    divf();
+    addf();
+    moveVelNMTime(60, 0, [-1.0f], 1.0f);
+    jmp(GirlA01_396, 0);
+GirlA01_376:
+    wait(1000);
+GirlA01_396:
+    push(1);
+    jmpNeq(GirlA01_376, 0);
+    ins_10();
+}
+
+void GirlA01_at()
+{
+    stackAlloc(4);
+    diffWait(30, 30, 30, 30);
+    etNew(0);
+    etAim(0, 0);
+    etSprite(0, 5, 6);
+    etCountD(0, 3, 3, 3, 3, 1, 1, 1, 1);
+    etAngle(0, 0.0f, 0.05235988f);
+    etSpeedD(0, 2.2f, 2.2f, 2.2f, 3.2f, 1.0f, 1.0f, 1.0f, 1.0f);
+    etExSet(0, 0, 1, 2, 1, -999999, -999999.0f, -999999.0f);
+    push(3);
+    set([0]);
+    jmp(GirlA01_at_424, 0);
+GirlA01_at_384:
+    etOn(0);
+    wait(30);
+GirlA01_at_424:
+    dec([0]);
+    jmpNeq(GirlA01_at_384, 0);
+    ins_10();
+}
+
+void GirlA01_at_l()
+{
+    stackAlloc(4);
+    wait(30);
+    etNew(0);
+    etAim(0, 2);
+    etSprite(0, 7, 4);
+    etCountD(0, 3, 3, 3, 6, 1, 1, 1, 1);
+    etAngle(0, 0.0f, 0.05235988f);
+    etSpeedD(0, 2.2f, 2.2f, 2.2f, 1.5f, 1.0f, 1.0f, 1.0f, 1.0f);
+    etExSet(0, 0, 1, 2, 1, -999999, -999999.0f, -999999.0f);
+    push(1);
+    set([0]);
+    jmp(GirlA01_at_l_412, 0);
+GirlA01_at_l_372:
+    etOn(0);
+    wait(30);
+GirlA01_at_l_412:
+    dec([0]);
+    jmpNeq(GirlA01_at_l_372, 0);
+    ins_10();
+}
+
+void GirlA01b()
+{
+    stackAlloc(0);
+    setHurtbox(24.0f, 24.0f);
+    setHitbox(16.0f, 16.0f);
+    moveVel(1.1780972f, 2.0f);
+    moveVelTime(60, 1, 1.5707964f, 1.0f);
+    wait(60);
+    moveVelTime(60, 0, 0.19634955f, 2.0f);
+    jmp(GirlA01b_236, 0);
+GirlA01b_216:
+    wait(1000);
+GirlA01b_236:
+    push(1);
+    jmpNeq(GirlA01b_216, 0);
+    ins_10();
+}
+
+void GirlA01b_at()
+{
+    stackAlloc(4);
+    wait(60);
+    etNew(0);
+    etAim(0, 0);
+    etSprite(0, 4, 6);
+    etCount(0, 5, 1);
+    etAngle(0, 0.0f, 0.05235988f);
+    etSpeed(0, 1.2f, 1.0f);
+    etExSet(0, 0, 1, 2, 1, -999999, -999999.0f, -999999.0f);
+    etExSet(0, 1, 1, 1, -999999, -999999, -999999.0f, -999999.0f);
+    push(3);
+    set([0]);
+    jmp(GirlA01b_at_412, 0);
+GirlA01b_at_372:
+    etOn(0);
+    wait(40);
+GirlA01b_at_412:
+    dec([0]);
+    jmpNeq(GirlA01b_at_372, 0);
+    ins_10();
+}
+
+void GirlA02()
+{
+    stackAlloc(0);
+    setHurtbox(24.0f, 24.0f);
+    setHitbox(16.0f, 16.0f);
+    moveVel(1.3744467f, 3.0f);
++10: //10
+    moveVelTime(60, 1, 0.19634955f, 2.0f);
+    callAsync("GirlA02_at");
+    wait(60);
+    jmp(GirlA02_236, 10);
+GirlA02_216:
+    wait(1000);
+GirlA02_236:
+    push(1);
+    jmpNeq(GirlA02_216, 10);
+    ins_10();
+}
+
+void GirlA02_at()
+{
+    stackAlloc(0);
+    etNew(0);
+    etAim(0, 0);
+    etSprite(0, 8, 6);
+    etCountD(0, 1, 1, 1, 1, 1, 1, 3, 1);
+    etAngle(0, 0.0f, 0.08726646f);
+    etSpeedD(0, 1.0f, 1.0f, 3.0f, 3.0f, 1.0f, 1.0f, 1.0f, 1.0f);
+    etExSet(0, 0, 1, 2, 1, -999999, -999999.0f, -999999.0f);
+    etExSet(0, 1, 1, 1, -999999, -999999, -999999.0f, -999999.0f);
+    push(20);
+    push($RAND);
+    push(20);
+    mod();
+    add();
+    push(20);
+    push($RAND);
+    push(160);
+    mod();
+    add();
+    push(20);
+    push($RAND);
+    push(320);
+    mod();
+    add();
+    push(50);
+    push($RAND);
+    push(320);
+    mod();
+    add();
+    diffWait([-1], [-2], [-3], [-4]);
+    etOn(0);
+    jmp(GirlA02_at_1200, 0);
+GirlA02_at_780:
+    push(5);
+    push($RAND);
+    push(10);
+    mod();
+    add();
+    push(40);
+    push($RAND);
+    push(40);
+    mod();
+    add();
+    push(60);
+    push($RAND);
+    push(60);
+    mod();
+    add();
+    push(120);
+    push($RAND);
+    push(60);
+    mod();
+    add();
+    diffWait([-1], [-2], [-3], [-4]);
+    etOn(0);
+GirlA02_at_1200:
+    push(1);
+    jmpNeq(GirlA02_at_780, 0);
+    ins_10();
+}
+
+void GirlB01()
+{
+    stackAlloc(0);
+    anmSelect(2);
+    anmSetMain(0, 30);
+    anmSetSprite(1, 85);
+    spec2(5);
+    spec1(120);
+    dropMain(1);
+    dropExtra(11, 1);
+    dropExtra(1, 3);
+    dropExtra(2, 4);
+    setHurtbox(32.0f, 32.0f);
+    setHitbox(24.0f, 24.0f);
+    moveVel(1.5707964f, 2.7f);
+    moveVelTime(80, 1, -999999.0f, 0.0f);
+!EN
+    callAsync("GirlB01_at");
+!HL
+    callAsync("GirlB01_at_h");
+!*
+    wait(240);
+    moveVelTime(80, 1, %ANGLE_PLAYER, 3.0f);
+    wait(60);
+    jmp(GirlB01_524, 0);
+GirlB01_504:
+    wait(1000);
+GirlB01_524:
+    push(1);
+    jmpNeq(GirlB01_504, 0);
+    delete();
+}
+
+void GirlB01_at()
+{
+    stackAlloc(4);
+    wait(60);
+    etNew(0);
+    etAim(0, 0);
+    etSprite(0, 5, 6);
+    etCountD(0, 1, 5, 5, 5, 1, 1, 1, 1);
+    etAngle(0, 0.0f, 0.05235988f);
+    etSpeedD(0, 1.2f, 1.2f, 1.2f, 1.2f, 1.0f, 1.0f, 1.0f, 1.0f);
+    etExSet(0, 0, 1, 2, 1, -999999, -999999.0f, -999999.0f);
+    etExSet(0, 1, 1, 1, -999999, -999999, -999999.0f, -999999.0f);
+    push(3);
+    set([0]);
+    jmp(GirlB01_at_460, 0);
+GirlB01_at_420:
+    etOn(0);
+    wait(40);
+GirlB01_at_460:
+    dec([0]);
+    jmpNeq(GirlB01_at_420, 0);
+    ins_10();
+}
+
+void GirlB01_at_h()
+{
+    stackAlloc(4);
+    wait(60);
+    etNew(0);
+    etAim(0, 2);
+    etSprite(0, 5, 6);
+    etCountD(0, 1, 5, 32, 32, 1, 1, 1, 3);
+    etAngle(0, 0.0f, 0.05235988f);
+    etSpeedD(0, 1.2f, 1.2f, 1.2f, 1.8f, 1.0f, 1.0f, 1.0f, 1.0f);
+    etExSet(0, 0, 1, 2, 1, -999999, -999999.0f, -999999.0f);
+    etExSet(0, 1, 0, 4, 120, -999999, 0.016666668f, -999999.0f);
+    push(3);
+    set([0]);
+    jmp(GirlB01_at_h_460, 0);
+GirlB01_at_h_420:
+    etOn(0);
+    wait(40);
+GirlB01_at_h_460:
+    dec([0]);
+    jmpNeq(GirlB01_at_h_420, 0);
+    ins_10();
+}
+
+void GirlB02()
+{
+    stackAlloc(0);
+    anmSelect(2);
+    anmSetMain(0, 35);
+    anmSetSprite(1, 91);
+    setHurtbox(28.0f, 28.0f);
+    setHitbox(16.0f, 16.0f);
+    spec2(5);
+    spec1(140);
+    dropMain(1);
+    dropExtra(1, 1);
+    dropExtra(2, 2);
+    callAsync("GirlB02_at");
+    moveVel(-0.19634955f, 3.0f);
++10: //10
+    moveVelTime(120, 1, 0.0f, 0.3f);
++140: //150
+    moveVelTime(180, 1, 2.7488935f, 3.0f);
+    wait(60);
+    jmp(GirlB02_444, 150);
+GirlB02_424:
+    wait(1000);
+GirlB02_444:
+    push(1);
+    jmpNeq(GirlB02_424, 150);
+    delete();
+}
+
+void GirlB02_at()
+{
+    stackAlloc(4);
+    etNew(0);
+    etAim(0, 2);
+    etSprite(0, 5, 2);
+    etCountD(0, 3, 5, 20, 13, 1, 1, 1, 2);
+    etAngle(0, 0.0f, 0.13962634f);
+    etSpeedD(0, 0.5f, 0.5f, 1.5f, 2.5f, 1.0f, 1.0f, 1.0f, 1.0f);
+    etSound(0, 21, -1);
+    etEx(0, 1, 2, 1, -999999, -999999.0f, -999999.0f);
+    etEx(0, 1, 1, -999999, -999999, -999999.0f, -999999.0f);
+    etEx(0, 0, -2147483648, 60, -999999, -999999.0f, -999999.0f);
+    etEx(0, 0, 4, 60, -999999, 0.016666668f, -999999.0f);
+    push(60);
+    push($RAND);
+    push(80);
+    mod();
+    add();
+    wait([-1]);
+    etAngle(0, %RANDRAD, 0.0f);
+    etOn(0);
+    push(1);
+    set([0]);
+    jmp(GirlB02_at_1088, 0);
+GirlB02_at_668:
+    push(70);
+    push($RAND);
+    push(40);
+    mod();
+    add();
+    push(100);
+    push($RAND);
+    push(40);
+    mod();
+    add();
+    push(120);
+    push($RAND);
+    push(40);
+    mod();
+    add();
+    push(240);
+    push($RAND);
+    push(40);
+    mod();
+    add();
+    diffWait([-1], [-2], [-3], [-4]);
+    etOn(0);
+GirlB02_at_1088:
+    dec([0]);
+    jmpNeq(GirlB02_at_668, 0);
+    ins_10();
+}
+
+void GirlBlueA01()
+{
+    stackAlloc(0);
+    anmSelect(2);
+    anmSetMain(0, 0);
+    dropMain(2);
+    call("GirlA01");
+    delete();
+}
+
+void GirlBlueA01b()
+{
+    stackAlloc(0);
+    anmSelect(2);
+    anmSetMain(0, 0);
+    dropMain(2);
+    call("GirlA01b");
+    delete();
+}
+
+void GirlBlueA02()
+{
+    stackAlloc(0);
+    anmSelect(2);
+    anmSetMain(0, 0);
+    dropMain(2);
+    call("GirlA02");
+    delete();
+}
+
+void GirlRedA01()
+{
+    stackAlloc(0);
+    anmSelect(2);
+    anmSetMain(0, 5);
+    dropMain(1);
+    call("GirlA01");
+    delete();
+}
+
+void GirlRedA01b()
+{
+    stackAlloc(0);
+    anmSelect(2);
+    anmSetMain(0, 5);
+    dropMain(1);
+    call("GirlA01");
+    delete();
+}
+
+void GirlRedA02()
+{
+    stackAlloc(0);
+    anmSelect(2);
+    anmSetMain(0, 5);
+    dropMain(1);
+    call("GirlA02");
+    delete();
+}
+
+void GirlTest()
+{
+    stackAlloc(8);
+    push(100);
+    set([0]);
+    anmSelect(2);
+    anmSetMain(0, 5);
+    flagSet(64);
+    flagSet(2);
+    setHurtbox(24.0f, 24.0f);
+    setHitbox(16.0f, 16.0f);
+    dropClear();
+    dropExtra(1, 3);
+    dropExtra(2, 4);
+    debug900(4);
+    moveVel(1.5707964f, 6.0f);
+    moveVelTime(10, 0, 1.5707964f, 0.0f);
++10: //10
+    delete();
+    jmp(GirlTest_408, 10);
+GirlTest_388:
+    wait(1000);
+GirlTest_408:
+    push(1);
+    jmpNeq(GirlTest_388, 10);
++30: //40
+    moveVelTime(100, 0, 0.0f, 2.0f);
+    jmp(GirlTest_528, 40);
+GirlTest_508:
+    wait(1000);
+GirlTest_528:
+    push(1);
+    jmpNeq(GirlTest_508, 40);
+    etNew(0);
+    etAim(0, 2);
+    etSprite(0, 4, 2);
+    etCountD(0, 1, 32, 3, 5, 1, 1, 1, 1);
+    etAngle(0, 0.0f, 0.032724924f);
+    etSpeedD(0, 2.0f, 2.0f, 3.0f, 5.5f, 1.0f, 1.0f, 1.0f, 2.0f);
+    etExSet(0, 0, 1, 2, 1, -999999, -999999.0f, -999999.0f);
+    etExSet(0, 1, 1, 1, -999999, -999999, -999999.0f, -999999.0f);
+    etOn(0);
+    push([0]);
+    set([4]);
+    jmp(GirlTest_996, 40);
+GirlTest_956:
+    wait(100);
+    etOn(0);
+GirlTest_996:
+    dec([4]);
+    jmpNeq(GirlTest_956, 40);
+    jmp(GirlTest_1084, 40);
+GirlTest_1064:
+    wait(1000);
+GirlTest_1084:
+    push(1);
+    jmpNeq(GirlTest_1064, 40);
+    delete();
+}
+
+void LogoEnemy()
+{
+    stackAlloc(0);
+    wait(730);
+    stageLogo();
+    ins_10();
+}
+
+void MBoss()
+{
+    stackAlloc(0);
+    setBoss(0);
+    push(0);
+    set($MISS_COUNT);
+    push(0);
+    set($BOMB_COUNT);
+    push(1);
+    set($CAPTURE);
+    enmKillAll();
+    timerReset();
+    enmCreate("Ecl_EtBreak_ni", 0.0f, 0.0f, 9999, 0, 0);
+    setChapter(4);
+    anmSelect(2);
+    anmSetSprite(0, 82);
+    flagSet(76);
+    setHurtbox(48.0f, 48.0f);
+    setHitbox(40.0f, 40.0f);
+    lifeSet(7000);
+    lifeMarker(0, 7000.0f, -8355585);
+    setNext(1, 0, 1800, "MBossDead");
+    setTimeout(1, "MBossEscape");
+    fog(128.0f, 5181359);
+    movePos(320.0f, 224.0f);
+    moveBezier(240, -2000.0f, -1000.0f, 0.0f, 128.0f, 0.0f, -100.0f);
+    wait(240);
+    moveCircle(-0.3926991f, -0.06283186f, 0.0f, 0.0f);
+    moveCircleTime(60, 0, -999999.0f, 8.0f, 0.0f);
+    moveLimit(0.0f, 160.0f, 280.0f, 64.0f);
+    call("MBoss1");
+    jmp(MBoss_808, 0);
+MBoss_788:
+    wait(1000);
+MBoss_808:
+    push(1);
+    jmpNeq(MBoss_788, 0);
+    delete();
+}
+
+void MBoss1()
+{
+    stackAlloc(0);
+    callAsync("MBoss1_at");
+    jmp(MBoss1_304, 0);
+MBoss1_92:
+    pushf(%RANDF);
+    push(64);
+    mulf();
+    push(64);
+    addf();
+    pushf(%RANDF2);
+    push(96);
+    mulf();
+    moveBezier(200, 0.0f, 0.0f, [-1.0f], [-2.0f], 0.0f, -100.0f);
+    wait(240);
+MBoss1_304:
+    push(1);
+    jmpNeq(MBoss1_92, 0);
+    ins_10();
+}
+
+void MBoss1_at()
+{
+    stackAlloc(12);
+    diffI([8], 11, 11, 13, 15);
+    jmp(MBoss1_at_328, 0);
+MBoss1_at_96:
+    math93([0.0f], [4.0f], 48.0f, 64.0f);
+    push($ENM_CNT_REAL);
+    push(8);
+    push(3);
+    add();
+    less();
+    jmpEq(MBoss1_at_296, 0);
+    enmCreateA("Phantom01", [0.0f], [4.0f], 100, 0, 0);
+MBoss1_at_296:
+    diffWait(30, 30, 20, 15);
+MBoss1_at_328:
+    push(1);
+    jmpNeq(MBoss1_at_96, 0);
+    ins_10();
+}
+
+void MBoss2()
+{
+    stackAlloc(12);
+    anmSetMain(0, 0);
+    timerReset();
+    unknown21();
+    enmKillAll();
+    push($TIMEOUT);
+    push(0);
+    eq();
+    jmpEq(MBoss2_232, 0);
+    etCancel(640.0f);
+    jmp(MBoss2_252, 0);
+MBoss2_232:
+    etClear(640.0f);
+MBoss2_252:
+    push(0);
+    set($MISS_COUNT);
+    push(0);
+    set($BOMB_COUNT);
+    moveVel(0.0f, 0.0f);
+    moveVelTime(0, 0, 0.0f, 0.0f);
+    movePosTime(0, 0, 0.0f, 0.0f);
+    spellEnd();
+    funcSet(0);
+    reset();
+    playSound(27);
+!EN
+    setNext(0, 0, 1440, "MBossDead");
+!HL
+    setNext(0, 1300, 1800, "MBossCard1");
+!*
+    setTimeout(0, "MBossEscape");
+    push($TIMEOUT);
+    push(0);
+    eq();
+    jmpEq(MBoss2_800, 0);
+    dropClear();
+    dropExtra(1, 5);
+    dropExtra(2, 5);
+    dropArea(48.0f, 48.0f);
+    dropItems();
+MBoss2_800:
+    setInvuln(60);
+    movePosTime(60, 4, 0.0f, 144.0f);
+    moveLimit(0.0f, 160.0f, 280.0f, 64.0f);
+    anmSelect(3);
+    anmSetMain(0, 0);
++60: //60
+    nop();
+    anmPlay(1, 63);
+    playSound(30);
++60: //120
+    nop();
+    jmp(MBoss2_1324, 120);
+MBoss2_1028:
+    anmSelectedPlay(0);
+    wait(12);
+    callAsync("MBoss2_at");
+    wait(20);
+    push($DIFF);
+    push(2);
+    geq();
+    jmpEq(MBoss2_1276, 120);
+    anm316(0, 1);
+    wait(12);
+    callAsync("MBoss2_at");
+MBoss2_1276:
+    moveRand(30, 4, 5.0f);
+    wait(32);
+MBoss2_1324:
+    push(1);
+    jmpNeq(MBoss2_1028, 120);
+    delete();
+}
+
+void MBoss2_at()
+{
+    stackAlloc(16);
+    pushf(3.141593f);
+    setf([0.0f]);
+    push(0);
+    setf([4.0f]);
+    etNew(0);
+    etAim(0, 3);
+    etSprite(0, 12, 3);
+    etCount(0, 2, 1);
+    etAngle(0, 1.5707964f, 0.032724924f);
+    etSpeed(0, 0.4f, 1.0f);
+    etExSet(0, 0, 1, 2, 2, -999999, -999999.0f, -999999.0f);
+    push($DIFF);
+    push(1);
+    leq();
+    jmpEq(MBoss2_at_472, 0);
+    etExSet(0, 1, 0, 4, 60, -999999, 0.036666665f, -999999.0f);
+    jmp(MBoss2_at_672, 0);
+MBoss2_at_472:
+    push($DIFF);
+    push(2);
+    leq();
+    jmpEq(MBoss2_at_624, 0);
+    etExSet(0, 1, 0, 4, 60, -999999, 0.053333335f, -999999.0f);
+    jmp(MBoss2_at_672, 0);
+MBoss2_at_624:
+    etExSet(0, 1, 0, 4, 60, -999999, 0.061666667f, -999999.0f);
+MBoss2_at_672:
+    pushf(%RANDF);
+    push(16);
+    mulf();
+    setf([8.0f]);
+    push(0);
+    setf([12.0f]);
+    jmp(MBoss2_at_1544, 0);
+MBoss2_at_812:
+    pushf(%RANDF2);
+    pushf([12.0f]);
+    mulf();
+    push(16);
+    subf();
+    etOffset(0, [8.0f], [-1.0f]);
+    etOn(0);
+    pushf(%RANDF2);
+    pushf([12.0f]);
+    mulf();
+    push(16);
+    subf();
+    push(0);
+    pushf([8.0f]);
+    subf();
+    etOffset(0, [-1.0f], [-2.0f]);
+    etOn(0);
+    wait(3);
+    pushf([8.0f]);
+    pushf(%RANDF);
+    push(32);
+    mulf();
+    push(16);
+    addf();
+    addf();
+    setf([8.0f]);
+!E
+    pushf([8.0f]);
+    push(16);
+    addf();
+    setf([8.0f]);
+!L
+    pushf([8.0f]);
+    push(8);
+    subf();
+    setf([8.0f]);
+!*
+    pushf([12.0f]);
+    push(16);
+    addf();
+    setf([12.0f]);
+MBoss2_at_1544:
+    pushf([8.0f]);
+    push(192);
+    leqf();
+    jmpNeq(MBoss2_at_812, 0);
+    ins_10();
+}
+
+void MBossCard1()
+{
+    stackAlloc(0);
+    timerReset();
+    unknown21();
+    enmKillAll();
+    enmCreate("Ecl_EtBreak", 0.0f, 0.0f, 9999, 0, 0);
+    spellEnd();
+    funcSet(0);
+    reset();
+    playSound(27);
+    moveVel(0.0f, 0.0f);
+    moveVelTime(0, 0, 0.0f, 0.0f);
+    movePosTime(0, 0, 0.0f, 0.0f);
+    push(0);
+    set($MISS_COUNT);
+    push(0);
+    set($BOMB_COUNT);
+    setNext(0, 0, 1920, "MBossDead");
+    setTimeout(0, "MBossEscape");
+    movePosTime(60, 4, 96.0f, 144.0f);
+    moveLimit(0.0f, 128.0f, 280.0f, 64.0f);
+    wait(60);
+    anmPlay(1, 63);
++60: //60
+    nop();
+    jmp(MBossCard1_876, 60);
+MBossCard1_604:
+    callAsync("MBossCard1At");
+    callAsync("MBossCard1At2");
+    callAsync("MBossCard1At2b");
+    push(0);
+    pushf(%FINAL_X);
+    subf();
+    movePosTime(120, 0, [-1.0f], %FINAL_Y);
+    wait(150);
+    moveVel(3.1415927f, 0.0f);
+    diffWait(58, 58, 58, 30);
+MBossCard1_876:
+    push(1);
+    jmpNeq(MBossCard1_604, 60);
+    jmp(MBossCard1_964, 60);
+MBossCard1_944:
+    wait(1000);
+MBossCard1_964:
+    push(1);
+    jmpNeq(MBossCard1_944, 60);
+    ins_10();
+}
+
+void MBossCard1At()
+{
+    stackAlloc(12);
+    etNew(0);
+    etSprite(0, 8, 6);
+    etAngle(0, 1.5707964f, 1.5707964f);
+    etSpeed(0, 8.0f, 8.0f);
+    laserNew(0, 480.0f, 480.0f, 0.0f, 16.0f);
+    laserTiming(0, 20, 8, 140, 10, 9);
+    etSound(0, 18, -1);
+    etExSet(0, 0, 0, 1048576, 1, -999999, -999999.0f, -999999.0f);
+    etAngle(0, 0.0f, 0.0f);
+    laserStOn(0, 1);
+    etAngle(0, 3.1415927f, 0.0f);
+    laserStOn(0, 2);
+    pushf(0.0f);
+    setf([0.0f]);
+    push(0);
+    setf([4.0f]);
+    push(0);
+    setf([8.0f]);
+    jmp(MBossCard1At_892, 0);
+MBossCard1At_540:
+    laserStAngle(1, [0.0f]);
+    pushf(3.1415927f);
+    pushf([0.0f]);
+    subf();
+    laserStAngle(2, [-1.0f]);
+    pushf([0.0f]);
+    pushf([4.0f]);
+    subf();
+    setf([0.0f]);
+    pushf([8.0f]);
+    pushf([4.0f]);
+    addf();
+    setf([8.0f]);
+    pushf([4.0f]);
+    pushf(0.000524f);
+    addf();
+    setf([4.0f]);
+    wait(1);
+MBossCard1At_892:
+    push($DIFF);
+    push(2);
+    eq();
+    pushf([8.0f]);
+    pushf(4.383618f);
+    lessf();
+    and();
+    push($DIFF);
+    push(3);
+    eq();
+    pushf([8.0f]);
+    pushf(4.48799f);
+    lessf();
+    and();
+    or();
+    jmpNeq(MBossCard1At_540, 0);
+    ins_10();
+}
+
+void MBossCard1At2()
+{
+    stackAlloc(8);
+    etNew(1);
+    etAim(1, 1);
+    etSprite(1, 10, 4);
+    etCount(1, 1, 1);
+    etAngle(1, 0.0f, 0.032724924f);
+    etSpeed(1, 0.0f, 1.0f);
+    etExSet(1, 0, 1, 2, 1, -999999, -999999.0f, -999999.0f);
+    etExSet(1, 1, 0, 1048576, 1, -999999, -999999.0f, -999999.0f);
+    etSound(1, 38, -1);
+    wait(40);
+    push(176);
+    setf([4.0f]);
+    jmp(MBossCard1At2_1176, 0);
+MBossCard1At2_400:
+    pushf(%RANDF);
+    pushf(3.0f);
+    mulf();
+    push(120);
+    divf();
+    setf([0.0f]);
+    pushf(1.0f);
+    push(120);
+    divf();
+    pushf([0.0f]);
+    addf();
+    etExSet(1, 2, 0, 4, 120, -999999, [-1.0f], -999999.0f);
+    push(0);
+    pushf(%FINAL_Y);
+    subf();
+    pushf([4.0f]);
+    pushf(%RANDF2);
+    push(32);
+    mulf();
+    addf();
+    pushf(%FINAL_X);
+    subf();
+    etOffset(1, [-1.0f], [-2.0f]);
+!H
+    pushf([4.0f]);
+    push(13);
+    subf();
+    setf([4.0f]);
+!L
+    pushf([4.0f]);
+    push(11);
+    subf();
+    setf([4.0f]);
+!*
+    pushf(1.5707964f);
+    pushf(%RANDRAD);
+    push(32);
+    divf();
+    addf();
+    etAngle(1, [-1.0f], 0.0f);
+    etOn(1);
+    wait(1);
+MBossCard1At2_1176:
+    pushf([4.0f]);
+    push(-192);
+    greaterf();
+    jmpNeq(MBossCard1At2_400, 0);
+    ins_10();
+}
+
+void MBossCard1At2b()
+{
+    stackAlloc(8);
+    etNew(2);
+    etAim(2, 1);
+    etSprite(2, 10, 4);
+    etCount(2, 1, 1);
+    etAngle(2, 0.0f, 0.032724924f);
+    etSpeed(2, 0.0f, 1.0f);
+    etExSet(2, 0, 1, 2, 1, -999999, -999999.0f, -999999.0f);
+    etExSet(2, 1, 0, 1048576, 1, -999999, -999999.0f, -999999.0f);
+    etSound(2, 38, -1);
+    wait(40);
+    push(-192);
+    setf([4.0f]);
+    jmp(MBossCard1At2b_1176, 0);
+MBossCard1At2b_400:
+    pushf(%RANDF);
+    pushf(3.0f);
+    mulf();
+    push(120);
+    divf();
+    setf([0.0f]);
+    pushf(1.0f);
+    push(120);
+    divf();
+    pushf([0.0f]);
+    addf();
+    etExSet(2, 2, 0, 4, 120, -999999, [-1.0f], -999999.0f);
+    push(0);
+    pushf(%FINAL_Y);
+    subf();
+    pushf([4.0f]);
+    pushf(%RANDF2);
+    push(32);
+    mulf();
+    addf();
+    pushf(%FINAL_X);
+    subf();
+    etOffset(2, [-1.0f], [-2.0f]);
+!H
+    pushf([4.0f]);
+    push(13);
+    addf();
+    setf([4.0f]);
+!L
+    pushf([4.0f]);
+    push(11);
+    addf();
+    setf([4.0f]);
+!*
+    pushf(1.5707964f);
+    pushf(%RANDRAD);
+    push(32);
+    divf();
+    addf();
+    etAngle(2, [-1.0f], 0.0f);
+    etOn(2);
+    wait(1);
+MBossCard1At2b_1176:
+    pushf([4.0f]);
+    push(192);
+    lessf();
+    jmpNeq(MBossCard1At2b_400, 0);
+    ins_10();
+}
+
+void MBossDead()
+{
+    stackAlloc(0);
+    flagSet(32);
+    spellEnd();
+    enmKillAll();
+    push($DIFF);
+    push(1);
+    leq();
+    jmpEq(MBossDead_404, 0);
+    push($TIMEOUT);
+    push(0);
+    eq();
+    jmpEq(MBossDead_324, 0);
+    enmCreate("Ecl_EtBreak", 0.0f, 0.0f, 9999, 0, 0);
+    jmp(MBossDead_380, 0);
+MBossDead_324:
+    enmCreate("Ecl_EtBreak_ni", 0.0f, 0.0f, 9999, 0, 0);
+MBossDead_380:
+    jmp(MBossDead_548, 0);
+MBossDead_404:
+    push($TIMEOUT);
+    push(0);
+    eq();
+    jmpEq(MBossDead_528, 0);
+    etCancel(640.0f);
+    jmp(MBossDead_548, 0);
+MBossDead_528:
+    etClear(640.0f);
+MBossDead_548:
+    anmPlay(1, 98);
+    dropClear();
+    push(1);
+    set($CAPTURE);
+    dropExtra(10, 1);
+    dropExtra(12, 1);
+    dropExtra(11, 3);
+    dropExtra(1, 5);
+    dropExtra(2, 8);
+    dropArea(48.0f, 48.0f);
+    dropItems();
+    setBoss(-1);
+    unknown557(60, 0, -11534256, 600.0f, 1800.0f);
+    setScreenShake(30, 12, 0);
+    anmPlay(0, 25);
+    playSound(5);
+    setChapter(0);
+    delete();
+    delete();
+}
+
+void MBossEscape()
+{
+    stackAlloc(0);
+    setNext(0, -1, 0, "");
+    setNext(1, -1, 0, "");
+    spellEnd();
+    moveLimitReset();
+    enmKillAll();
+    push($TIMEOUT);
+    push(0);
+    eq();
+    jmpEq(MBossEscape_280, 0);
+    etCancel(640.0f);
+    jmp(MBossEscape_300, 0);
+MBossEscape_280:
+    etClear(640.0f);
+MBossEscape_300:
+    lifeSet(100000);
+    unknown557(60, 0, -11534256, 600.0f, 1800.0f);
+    setChapter(0);
+    setBoss(-1);
+    flagSet(16);
+    movePosTime(60, 4, 0.0f, -32.0f);
+    wait(60);
+    delete();
+    delete();
+}
+
+void MainBoss()
+{
+    stackAlloc(0);
+    dialogWait();
+    enmCreateA("Boss", 144.0f, -16.0f, 40, 1000, 1);
+    dialogWait();
+    setChapter(6);
+    unknown520();
+    setChapter(7);
++60: //60
+    dialogRead(1);
+    dialogWait();
+    ins_10();
+    ins_10();
+}
+
+void MainBossDebug()
+{
+    stackAlloc(0);
+    setChapter(5);
++10: //10
+    dialogRead(0);
+    call("MainBoss");
+    ins_10();
+}
+
+void MainBossDebug2()
+{
+    stackAlloc(0);
+    setChapter(5);
++10: //10
+    dialogRead(-1);
+    setChapter(6);
+    call("MainBoss");
+    ins_10();
+}
+
+void MainFront()
+{
+    stackAlloc(0);
+    call("MainSub00");
+    wait(240);
+    call("MainSub01");
+    wait(230);
+    call("MainSub02");
+    wait(300);
+    call("MainSub03");
+    wait(170);
+    ins_10();
+}
+
+void MainLatter()
+{
+    stackAlloc(0);
+    call("MainSub04");
+    unknown520();
+    callAsync("MainSub04b");
+    call("MainSub05");
+    call("MainSub06");
+    call("MainSub07");
+    ins_10();
+}
+
+void MainMBossDebug()
+{
+    stackAlloc(0);
+    setChapter(4);
+    enmCreateA("MBoss", 112.0f, -32.0f, 40, 1000, 1);
+    jmp(MainMBossDebug_148, 0);
+MainMBossDebug_128:
+    wait(1000);
+MainMBossDebug_148:
+    push(1);
+    jmpNeq(MainMBossDebug_128, 0);
+    ins_10();
+}
+
+void MainMsgDebug()
+{
+    stackAlloc(0);
++10: //10
+    dialogRead(0);
+    dialogWait();
++1: //11
+    dialogWait();
++60: //71
+    dialogRead(1);
+    dialogWait();
+    jmp(MainMsgDebug_164, 4071);
+MainMsgDebug_148:
++4000: //4071
+    nop();
+MainMsgDebug_164:
+    push(1);
+    jmpNeq(MainMsgDebug_148, 71);
+    ins_10();
+}
+
+void MainSub00()
+{
+    stackAlloc(8);
+    push(-144);
+    setf([0.0f]);
+    push(10);
+    set([4]);
+    jmp(MainSub00_656, 0);
+MainSub00_140:
+    pushf([0.0f]);
+    pushf(%RANDF2);
+    pushf(32.0f);
+    mulf();
+    addf();
+    enmCreate("GirlRedA01", [-1.0f], -16.0f, 40, 1000, 1);
+    pushf([0.0f]);
+    push(12);
+    addf();
+    setf([0.0f]);
+    wait(30);
+    push(0);
+    pushf([0.0f]);
+    subf();
+    pushf(%RANDF2);
+    pushf(32.0f);
+    mulf();
+    addf();
+    enmCreateM("GirlBlueA01", [-1.0f], -16.0f, 40, 1000, 1);
+    pushf([0.0f]);
+    push(12);
+    addf();
+    setf([0.0f]);
+    wait(30);
+MainSub00_656:
+    dec([4]);
+    jmpNeq(MainSub00_140, 0);
+    ins_10();
+}
+
+void MainSub01()
+{
+    stackAlloc(4);
+    callAsync("MainSub01b");
+    callAsync("MainSub01c");
+    push(12);
+    set([0]);
+    jmp(MainSub01_328, 0);
+MainSub01_164:
+    push(-64);
+    pushf(%RANDF2);
+    pushf(8.0f);
+    mulf();
+    addf();
+    enmCreate("GirlRedA02", [-1.0f], -16.0f, 40, 1000, 1);
+    wait(20);
+MainSub01_328:
+    dec([0]);
+    jmpNeq(MainSub01_164, 0);
+    ins_10();
+}
+
+void MainSub01b()
+{
+    stackAlloc(4);
+    wait(160);
+    push(12);
+    set([0]);
+    jmp(MainSub01b_284, 0);
+MainSub01b_120:
+    push(192);
+    pushf(%RANDF2);
+    pushf(8.0f);
+    mulf();
+    addf();
+    enmCreateM("GirlRedA02", [-1.0f], -16.0f, 40, 1000, 1);
+    wait(20);
+MainSub01b_284:
+    dec([0]);
+    jmpNeq(MainSub01b_120, 0);
+    ins_10();
+}
+
+void MainSub01c()
+{
+    stackAlloc(4);
+    wait(320);
+    push(12);
+    set([0]);
+    jmp(MainSub01c_284, 0);
+MainSub01c_120:
+    push(-192);
+    pushf(%RANDF2);
+    pushf(8.0f);
+    mulf();
+    addf();
+    enmCreate("GirlBlueA02", [-1.0f], -16.0f, 40, 1000, 1);
+    wait(20);
+MainSub01c_284:
+    dec([0]);
+    jmpNeq(MainSub01c_120, 0);
+    ins_10();
+}
+
+void MainSub02()
+{
+    stackAlloc(0);
+    enmCreate("GirlB01", 0.0f, -16.0f, 600, 1000, 1);
+    ins_10();
+}
+
+void MainSub03()
+{
+    stackAlloc(8);
+    callAsync("MainSub03b");
+    push(3);
+    set([0]);
+    jmp(MainSub03_200, 0);
+MainSub03_132:
+    enmCreate("GirlB02", -224.0f, 128.0f, 400, 1000, 1);
+    wait(80);
+MainSub03_200:
+    dec([0]);
+    jmpNeq(MainSub03_132, 0);
+    wait(60);
+    push(3);
+    set([4]);
+    jmp(MainSub03_396, 0);
+MainSub03_328:
+    enmCreateM("GirlB02", 224.0f, 128.0f, 400, 1000, 1);
+    wait(80);
+MainSub03_396:
+    dec([4]);
+    jmpNeq(MainSub03_328, 0);
+    ins_10();
+}
+
+void MainSub03b()
+{
+    stackAlloc(12);
+    push(192);
+    setf([0.0f]);
+    push(5);
+    set([4]);
+    jmp(MainSub03b_384, 0);
+MainSub03b_140:
+    pushf([0.0f]);
+    pushf(%RANDF2);
+    pushf(16.0f);
+    mulf();
+    addf();
+    enmCreateM("GirlBlueA01b", [-1.0f], -16.0f, 40, 1000, 1);
+    pushf([0.0f]);
+    push(12);
+    subf();
+    setf([0.0f]);
+    wait(30);
+MainSub03b_384:
+    dec([4]);
+    jmpNeq(MainSub03b_140, 0);
+    wait(160);
+    push(-192);
+    setf([0.0f]);
+    push(5);
+    set([8]);
+    jmp(MainSub03b_792, 0);
+MainSub03b_552:
+    pushf([0.0f]);
+    pushf(%RANDF2);
+    pushf(16.0f);
+    mulf();
+    addf();
+    enmCreate("GirlRedA01b", [-1.0f], -16.0f, 40, 1000, 1);
+    pushf([0.0f]);
+    push(12);
+    addf();
+    setf([0.0f]);
+    wait(30);
+MainSub03b_792:
+    dec([8]);
+    jmpNeq(MainSub03b_552, 0);
+    ins_10();
+}
+
+void MainSub04()
+{
+    stackAlloc(4);
+    push(6);
+    set([0]);
+    jmp(MainSub04_1452, 0);
+MainSub04_100:
+    push(16);
+    pushf(%RANDF);
+    push(128);
+    mulf();
+    addf();
+    enmCreateF("Phantom02", 160.0f, [-1.0f], 60, 1000, 1);
+    push(16);
+    pushf(%RANDF);
+    push(128);
+    mulf();
+    addf();
+    enmCreateF("Phantom02", -160.0f, [-1.0f], 60, 1000, 1);
+    wait(30);
+    push(16);
+    pushf(%RANDF);
+    push(128);
+    mulf();
+    addf();
+    push(-128);
+    pushf(%RANDF2);
+    push(48);
+    mulf();
+    addf();
+    enmCreateF("Phantom02", [-1.0f], [-2.0f], 60, 1000, 1);
+    wait(30);
+    push(16);
+    pushf(%RANDF);
+    push(128);
+    mulf();
+    addf();
+    push(-128);
+    pushf(%RANDF2);
+    push(48);
+    mulf();
+    addf();
+    enmCreateF("Phantom02", [-1.0f], [-2.0f], 60, 1000, 1);
+    wait(30);
+    wait(30);
+    push(16);
+    pushf(%RANDF);
+    push(128);
+    mulf();
+    addf();
+    push(128);
+    pushf(%RANDF2);
+    push(48);
+    mulf();
+    addf();
+    enmCreateF("Phantom02", [-1.0f], [-2.0f], 60, 1000, 1);
+    wait(30);
+    push(16);
+    pushf(%RANDF);
+    push(128);
+    mulf();
+    addf();
+    push(128);
+    pushf(%RANDF2);
+    push(48);
+    mulf();
+    addf();
+    enmCreateF("Phantom02", [-1.0f], [-2.0f], 60, 1000, 1);
+    wait(30);
+MainSub04_1452:
+    dec([0]);
+    jmpNeq(MainSub04_100, 0);
+    ins_10();
+}
+
+void MainSub04b()
+{
+    stackAlloc(4);
+    wait(240);
+    push(4);
+    set([0]);
+    jmp(MainSub04b_1184, 0);
+MainSub04b_120:
+    wait(30);
+    push(16);
+    pushf(%RANDF);
+    push(128);
+    mulf();
+    addf();
+    push(128);
+    pushf(%RANDF2);
+    push(48);
+    mulf();
+    addf();
+    enmCreate("Phantom02b", [-1.0f], [-2.0f], 60, 1000, 1);
+    wait(30);
+    push(16);
+    pushf(%RANDF);
+    push(128);
+    mulf();
+    addf();
+    push(128);
+    pushf(%RANDF2);
+    push(48);
+    mulf();
+    addf();
+    enmCreate("Phantom02b", [-1.0f], [-2.0f], 60, 1000, 1);
+    wait(30);
+    wait(30);
+    push(16);
+    pushf(%RANDF);
+    push(128);
+    mulf();
+    addf();
+    push(-112);
+    pushf(%RANDF2);
+    push(48);
+    mulf();
+    addf();
+    enmCreate("Phantom02b", [-1.0f], [-2.0f], 60, 1000, 1);
+    wait(30);
+    push(16);
+    pushf(%RANDF);
+    push(128);
+    mulf();
+    addf();
+    push(-112);
+    pushf(%RANDF2);
+    push(48);
+    mulf();
+    addf();
+    enmCreate("Phantom02b", [-1.0f], [-2.0f], 60, 1000, 1);
+    wait(30);
+MainSub04b_1184:
+    dec([0]);
+    jmpNeq(MainSub04b_120, 0);
+    ins_10();
+}
+
+void MainSub05()
+{
+    stackAlloc(8);
+    push(3);
+    set([0]);
+    jmp(MainSub05_168, 0);
+MainSub05_100:
+    enmCreateM("GirlB02", 224.0f, 128.0f, 400, 1000, 1);
+    wait(80);
+MainSub05_168:
+    dec([0]);
+    jmpNeq(MainSub05_100, 0);
+    wait(60);
+    push(3);
+    set([4]);
+    jmp(MainSub05_364, 0);
+MainSub05_296:
+    enmCreate("GirlB02", -224.0f, 128.0f, 400, 1000, 1);
+    wait(80);
+MainSub05_364:
+    dec([4]);
+    jmpNeq(MainSub05_296, 0);
+    ins_10();
+}
+
+void MainSub06()
+{
+    stackAlloc(8);
+    push(3);
+    set([0]);
+    jmp(MainSub06_168, 0);
+MainSub06_100:
+    enmCreate("GirlB02", -224.0f, 128.0f, 400, 1000, 1);
+    wait(80);
+MainSub06_168:
+    dec([0]);
+    jmpNeq(MainSub06_100, 0);
+    wait(60);
+    push(3);
+    set([4]);
+    jmp(MainSub06_364, 0);
+MainSub06_296:
+    enmCreateM("GirlB02", 224.0f, 128.0f, 400, 1000, 1);
+    wait(80);
+MainSub06_364:
+    dec([4]);
+    jmpNeq(MainSub06_296, 0);
+    ins_10();
+}
+
+void MainSub07()
+{
+    stackAlloc(8);
+    callAsync("MainSub07b");
+    push(3);
+    set([0]);
+    jmp(MainSub07_200, 0);
+MainSub07_132:
+    enmCreate("GirlB02", -224.0f, 128.0f, 400, 1000, 1);
+    wait(80);
+MainSub07_200:
+    dec([0]);
+    jmpNeq(MainSub07_132, 0);
+    wait(60);
+    push(3);
+    set([4]);
+    jmp(MainSub07_396, 0);
+MainSub07_328:
+    enmCreateM("GirlB02", 224.0f, 128.0f, 400, 1000, 1);
+    wait(80);
+MainSub07_396:
+    dec([4]);
+    jmpNeq(MainSub07_328, 0);
+    ins_10();
+}
+
+void MainSub07b()
+{
+    stackAlloc(12);
+    push(192);
+    setf([0.0f]);
+    push(5);
+    set([4]);
+    jmp(MainSub07b_528, 0);
+MainSub07b_140:
+    pushf([0.0f]);
+    pushf(%RANDF2);
+    pushf(16.0f);
+    mulf();
+    addf();
+    enmCreateM("GirlBlueA01b", [-1.0f], -16.0f, 40, 1000, 1);
+    push(-192);
+    pushf(%RANDF2);
+    pushf(16.0f);
+    mulf();
+    addf();
+    enmCreate("GirlRedA01b", [-1.0f], -16.0f, 40, 1000, 1);
+    pushf([0.0f]);
+    push(12);
+    subf();
+    setf([0.0f]);
+    wait(30);
+MainSub07b_528:
+    dec([4]);
+    jmpNeq(MainSub07b_140, 0);
+    wait(160);
+    push(-192);
+    setf([0.0f]);
+    push(5);
+    set([8]);
+    jmp(MainSub07b_1084, 0);
+MainSub07b_696:
+    push(192);
+    pushf(%RANDF2);
+    pushf(16.0f);
+    mulf();
+    addf();
+    enmCreateM("GirlBlueA01b", [-1.0f], -16.0f, 40, 1000, 1);
+    pushf([0.0f]);
+    pushf(%RANDF2);
+    pushf(16.0f);
+    mulf();
+    addf();
+    enmCreate("GirlRedA01b", [-1.0f], -16.0f, 40, 1000, 1);
+    pushf([0.0f]);
+    push(12);
+    addf();
+    setf([0.0f]);
+    wait(30);
+MainSub07b_1084:
+    dec([8]);
+    jmpNeq(MainSub07b_696, 0);
+    ins_10();
+}
+
+void MapleEnemy()
+{
+    stackAlloc(8);
+    flagSet(32);
+    push(60);
+    set([0]);
+    jmp(MapleEnemy_164, 0);
+MapleEnemy_120:
+    anmPlayAbs(1, 91);
+    wait(8);
+MapleEnemy_164:
+    dec([0]);
+    jmpNeq(MapleEnemy_120, 0);
+    push(400);
+    set([4]);
+    jmp(MapleEnemy_316, 0);
+MapleEnemy_272:
+    anmPlayAbs(1, 91);
+    wait(1);
+MapleEnemy_316:
+    dec([4]);
+    jmpNeq(MapleEnemy_272, 0);
+    jmp(MapleEnemy_428, 0);
+MapleEnemy_384:
+    anmPlayAbs(1, 91);
+    wait(5);
+MapleEnemy_428:
+    push(1);
+    jmpNeq(MapleEnemy_384, 0);
+    delete();
+}
+
+void Phantom01()
+{
+    stackAlloc(8);
+    anmSelect(2);
+    playSound(50);
+    callAsync("TraceEnemyPos", _SS $UNKNOWN9);
+    setHurtbox(28.0f, 28.0f);
+    setHitbox(16.0f, 16.0f);
+    spec2(1);
+    spec1(40);
+    dropMain(2);
+    flagSet(32);
++2: //2
+    anmSetSprite(0, 78);
+    flagClear(32);
+    squareSumRoot([0.0f], %ABS_X, %ABS_Y);
+    mathAngle([4.0f], 0.0f, 0.0f, %ABS_X, %ABS_Y);
+    movePos(0.0f, 0.0f);
+    moveCircle([4.0f], 0.0f, [0.0f], 0.0f);
+    pushf([4.0f]);
+    pushf(-1.5707964f);
+    lessf();
+    pushf([4.0f]);
+    pushf(1.5707964f);
+    greaterf();
+    or();
+    jmpEq(Phantom01_624, 2);
+    moveCircleTime(120, 0, -0.05235988f, [0.0f], 0.0f);
+    jmp(Phantom01_660, 2);
+Phantom01_624:
+    moveCircleTime(120, 0, 0.05235988f, [0.0f], 0.0f);
+Phantom01_660:
+    callAsync("Phantom01_at");
+    wait(60);
+    jmp(Phantom01_760, 2);
+Phantom01_740:
+    wait(1000);
+Phantom01_760:
+    push(1);
+    jmpNeq(Phantom01_740, 2);
+    delete();
+}
+
+void Phantom01_at()
+{
+    stackAlloc(8);
+    etNew(0);
+    etAim(0, 2);
+    etSprite(0, 5, 6);
+    etCountD(0, 3, 5, 8, 12, 1, 1, 1, 1);
+    etAngle(0, 0.0f, 0.0f);
+    etSpeedD(0, 0.5f, 0.5f, 0.5f, 0.5f, 1.0f, 1.0f, 1.0f, 1.0f);
+    etSound(0, 21, -1);
+    etEx(0, 1, 2, 1, -999999, -999999.0f, -999999.0f);
+    etEx(0, 1, 1, -999999, -999999, -999999.0f, -999999.0f);
+    etEx(0, 0, -2147483648, 60, -999999, -999999.0f, -999999.0f);
+    push(40);
+    push($RAND);
+    push(40);
+    mod();
+    add();
+    wait([-1]);
+    etAngle(0, %RANDRAD, 0.0f);
+    diffF([0.0f], 0.016666668f, 0.016666668f, 0.033333335f, 0.033333335f);
+    pushf(%ANGLE_PLAYER);
+    pushf(%RANDRAD);
+    push(16);
+    divf();
+    addf();
+    etExSet(0, 3, 0, 4, 60, -999999, [0.0f], [-1.0f]);
+    etOn(0);
+    push(1000);
+    set([4]);
+    jmp(Phantom01_at_1360, 0);
+Phantom01_at_800:
+    push(80);
+    push($RAND);
+    push(40);
+    mod();
+    add();
+    push(150);
+    push($RAND);
+    push(40);
+    mod();
+    add();
+    push(300);
+    push($RAND);
+    push(40);
+    mod();
+    add();
+    push(360);
+    push($RAND);
+    push(40);
+    mod();
+    add();
+    diffWait([-1], [-2], [-3], [-4]);
+    pushf(%ANGLE_PLAYER);
+    pushf(%RANDRAD);
+    push(16);
+    divf();
+    addf();
+    etExSet(0, 3, 0, 4, 60, -999999, 0.016666668f, [-1.0f]);
+    etOn(0);
+Phantom01_at_1360:
+    dec([4]);
+    jmpNeq(Phantom01_at_800, 0);
+    ins_10();
+}
+
+void Phantom02()
+{
+    stackAlloc(0);
+    anmSelect(2);
+    anmSetSprite(0, 78);
+    playSound(50);
+    setHurtbox(28.0f, 28.0f);
+    setHitbox(16.0f, 16.0f);
+    spec2(1);
+    spec1(60);
+    flagSet(12);
+    dropMain(2);
+    dropExtra(1, 1);
+!NHL
+    callAsync("Phantom02_at");
+!*
+    moveVel(1.5707964f, 0.0f);
+    pushf(1.5707964f);
+    pushf(%RANDRAD);
+    push(8);
+    divf();
+    addf();
+    moveVelTime(260, 0, [-1.0f], 1.0f);
+    wait(60);
+    flagClear(12);
+    jmp(Phantom02_520, 0);
+Phantom02_500:
+    wait(1000);
+Phantom02_520:
+    push(1);
+    jmpNeq(Phantom02_500, 0);
+    delete();
+}
+
+void Phantom02_at()
+{
+    stackAlloc(0);
+    etNew(0);
+    etAim(0, 0);
+    etSprite(0, 5, 6);
+    etCountD(0, 1, 1, 1, 1, 1, 1, 4, 8);
+    etAngle(0, 0.0f, 0.0f);
+    etSpeedD(0, 1.0f, 1.0f, 3.0f, 4.0f, 1.0f, 1.0f, 1.0f, 1.0f);
+    etSound(0, 21, -1);
+    etEx(0, 1, 2, 1, -999999, -999999.0f, -999999.0f);
+    push(120);
+    push($RAND);
+    push(40);
+    mod();
+    add();
+    wait([-1]);
+    etOn(0);
+    ins_10();
+}
+
+void Phantom02b()
+{
+    stackAlloc(0);
+    anmSelect(2);
+    anmSetSprite(0, 78);
+    playSound(50);
+    setHurtbox(28.0f, 28.0f);
+    setHitbox(16.0f, 16.0f);
+    spec2(1);
+    spec1(60);
+    flagSet(12);
+    dropMain(2);
+    dropExtra(1, 1);
+!L
+    callAsync("Phantom02_at");
+!*
+    moveVel(1.5707964f, 0.0f);
+    pushf(1.5707964f);
+    pushf(%RANDRAD);
+    push(8);
+    divf();
+    addf();
+    moveVelTime(260, 0, [-1.0f], 1.0f);
+    wait(60);
+    flagClear(12);
+    jmp(Phantom02b_520, 0);
+Phantom02b_500:
+    wait(1000);
+Phantom02b_520:
+    push(1);
+    jmpNeq(Phantom02b_500, 0);
+    delete();
+}
+
+void TraceEnemyPos()
+{
+    stackAlloc(4);
+    jmp(TraceEnemyPos_100, 0);
+TraceEnemyPos_60:
+    moveEnmRel([0]);
+    wait(1);
+TraceEnemyPos_100:
+    push(1);
+    jmpNeq(TraceEnemyPos_60, 0);
+    ins_10();
+}
+
+void main()
+{
+    stackAlloc(8);
+    flagSet(32);
+    setChapter(0);
+    enmMapleEnemy("MapleEnemy", 0, 0, 100, 1000, 0);
+    push($SPELL_ID);
+    push(0);
+    geq();
+    jmpEq(main_332, 0);
+    call("MainBossSpell");
+    jmp(main_288, 0);
+main_268:
+    wait(1000);
+main_288:
+    push(1);
+    jmpNeq(main_268, 0);
+main_332:
+    debug22(1, "MainMBossDebug");
+    debug22(2, "MainBossDebug");
+    debug22(3, "MainBossDebug2");
+    debug22(4, "MainMsgDebug");
+    debug22(5, "MainLatter");
+    callAsync("LogoEnemy");
++60: //60
+    nop();
+    call("MainFront");
+    enmCreateA("MBoss", 192.0f, -32.0f, 40, 1000, 1);
+    wait(160);
+    call("MainLatter");
+    wait(280);
+    setChapter(5);
+    dialogRead(0);
+    setChapter(6);
+    call("MainBoss");
+    jmp(main_864, 60);
+main_844:
+    wait(1000);
+main_864:
+    push(1);
+    jmpNeq(main_844, 60);
+    delete();
+}

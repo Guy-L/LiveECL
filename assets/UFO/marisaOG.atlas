@@ -1,0 +1,216 @@
+
+marisa.png
+size: 255,143
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+mainBullet
+  rotate: false
+  xy: 1, 145
+  size: 31, 16
+  orig: 31, 16
+  offset: 0, 0
+  index: 1
+mainBulletDest
+  rotate: false
+  xy: 34, 145
+  size: 31, 16
+  orig: 31, 16
+  offset: 0, 0
+  index: 1
+mainBulletDest
+  rotate: false
+  xy: 66, 145
+  size: 31, 16
+  orig: 31, 16
+  offset: 0, 0
+  index: 2
+mainBulletDest
+  rotate: false
+  xy: 97, 145
+  size: 31, 16
+  orig: 31, 16
+  offset: 0, 0
+  index: 3
+hakkeroA
+  rotate: false
+  xy: 82, 162
+  size: 14,14
+  orig: 14,14
+  offset: 0, 0
+  index: 1
+hakkeroB
+  rotate: false
+  xy: 66, 162
+  size: 14,14
+  orig: 14,14
+  offset: 0, 0
+  index: 1
+laser
+  rotate: false
+  xy: 1,178
+  size: 256,14
+  orig: 256,14
+  offset: 0, 0
+  index: 1
+front
+  rotate: false
+  xy: 0,4
+  size: 32, 47
+  orig: 32, 47
+  offset: 0, 0
+  index: 1
+front
+  rotate: false
+  xy: 32,4
+  size: 32, 47
+  orig: 32, 47
+  offset: 0, 0
+  index: 2
+front
+  rotate: false
+  xy: 64,4
+  size: 32, 47
+  orig: 32, 47
+  offset: 0, 0
+  index: 3
+front
+  rotate: false
+  xy: 96,4
+  size: 32, 47
+  orig: 32, 47
+  offset: 0, 0
+  index: 4
+front
+  rotate: false
+  xy: 128,4
+  size: 32, 47
+  orig: 32, 47
+  offset: 0, 0
+  index: 5
+front
+  rotate: false
+  xy: 160,4
+  size: 32, 47
+  orig: 32, 47
+  offset: 0, 0
+  index: 6
+front
+  rotate: false
+  xy: 192,4
+  size: 32, 47
+  orig: 32, 47
+  offset: 0, 0
+  index: 7
+front
+  rotate: false
+  xy: 224,4
+  size: 32, 47
+  orig: 32, 47
+  offset: 0, 0
+  index: 8
+tleft
+  rotate: false
+  xy: 32,52
+  size: 32, 47
+  orig: 32, 47
+  offset: 0, 0
+  index:1
+tleft
+  rotate: false
+  xy: 64,52
+  size: 32, 47
+  orig: 32, 47
+  offset: 0, 0
+  index:2
+tleft
+  rotate: false
+  xy: 96,52
+  size: 32, 47
+  orig: 32, 47
+  offset: 0, 0
+  index:3
+left
+  rotate: false
+  xy: 128,52
+  size: 32, 47
+  orig: 32, 47
+  offset: 0, 0
+  index: 1
+left
+  rotate: false
+  xy: 160,52
+  size: 32, 47
+  orig: 32, 47
+  offset: 0, 0
+  index:2
+left
+  rotate: false
+  xy: 192,52
+  size: 32, 47
+  orig: 32, 47
+  offset: 0, 0
+  index: 3
+left
+  rotate: false
+  xy: 224,52
+  size: 32, 47
+  orig: 32, 47
+  offset: 0, 0
+  index: 4
+tright
+  rotate: false
+  xy: 32,99
+  size: 32, 46
+  orig: 32, 46
+  offset: 0, 0
+  index:1
+tright
+  rotate: false
+  xy: 64,99
+  size: 32, 46
+  orig: 32, 46
+  offset: 0, 0
+  index:2
+tright
+  rotate: false
+  xy: 96,99
+  size: 32, 46
+  orig: 32, 46
+  offset: 0, 0
+  index:3
+tright
+  rotate: false
+  xy: 128,99
+  size: 32, 46
+  orig: 32, 46
+  offset: 0, 0
+  index: 4
+right
+  rotate: false
+  xy: 160,99
+  size: 32, 47
+  orig: 32, 47
+  offset: 0, 0
+  index:1
+right
+  rotate: false
+  xy: 192,99
+  size: 32, 47
+  orig: 32, 47
+  offset: 0, 0
+  index:2
+right
+  rotate: false
+  xy: 224,99
+  size: 32, 47
+  orig: 32, 47
+  offset: 0, 0
+  index:3
+right
+  rotate: false
+  xy: 224,99
+  size: 32, 47
+  orig: 32, 47
+  offset: 0, 0
+  index:4
