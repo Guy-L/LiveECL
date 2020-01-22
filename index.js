@@ -1,4 +1,5 @@
 var ecl = "";
+var dlCount = 1;
 var edit;
 var unhandledC = false;
 var unhandledF = false;
@@ -45,37 +46,45 @@ function newFile(){
     }
 }
 
-function download(){
-    //var a = document.getElementById("a");
-    //a.style.display = "block";
-    //var file = new Blob([text], {type: type});
-    //a.href = URL.createObjectURL(file);
-    //a.download = name;
+function toggleTheme(){
+    $(".CodeMirror").toggleClass("night");
 }
 
 function upload(){
-    //todo
+    var button = $("#fileUpload");
+    if(button.length) {
+        button.trigger('click');
+    }
 }
 
-function themeSwitch(){
-    //todo
+function download(){
+    $("#download").find('a').get(0).click();
+}
+
+function downloadFn(){
+    var button = $("#download a");
+    if(button.length){
+        button.attr("href", URL.createObjectURL(new Blob([edit.getValue()], {type: "text/plain;charset=utf-8;"})));
+        button.attr("download", "ECL #"+dlCount+" ("+ new Date().toLocaleDateString('default',{hourCycle:'h24', month:'short', day:'2-digit', hour:'2-digit', minute:'2-digit'}).replace(":","-") +").ecs");
+    } dlCount++;
 }
 
 function fullscreen(){ //todo
     unhandledF = true;
 }
 
-function switchFocus(){ //todo
-    $("#gameWindow").focus();
+function windowOpen(){ //todo
+    alert("nope not yet either :(");
 }
 
-function clear(){
+function clearBullets(){
     unhandledC = true;
 }
 
 function restart(){
     var game = $('#gameWindow');
     if(game.length){
+        printTerminal("<span class=\"gameLog\">GAME:</span> <i>Reloading...</i>");
         game.attr('src', function (i, val) {return val;});
     }
 }
@@ -96,14 +105,24 @@ $(document).ready(function() {
                     }
                    }
     }); edit.focus();
-    $(".CodeMirror").toggleClass("edit");
+    $(".CodeMirror").addClass("edit");
 
     $(document).keydown(function(e) {
         if(e.altKey) {
-            switch(e.keyCode){
+            switch(e.keyCode){ //todo all
                 case 67: //C
                     e.preventDefault();
-                    clear();
+                    clearBullets();
+                    break;
+
+                case 68: //D
+                    e.preventDefault();
+                    download();
+                    break;
+
+                case 69: //E
+                    e.preventDefault();
+                    windowOpen();
                     break;
 
                 case 70: //F
@@ -111,34 +130,42 @@ $(document).ready(function() {
                     fullscreen();
                     break;
 
+                case 78: //N
+                    e.preventDefault;
+                    newFile();
+                    break;
+
                 case 82: //R
                     e.preventDefault();
-                    printTerminal("<span class=\"gameLog\">GAME:</span> <i>Reloading...</i>");
                     restart();
                     break;
 
                 case 83: //S
                     e.preventDefault();
-                    switchFocus();
+                    $("#gameWindow").focus();
                     break;
 
-                case 83: //W
-                    alert("incoming feature");
+                case 84: //T
+                    e.preventDefault();
+                    toggleTheme();
+                    break;
+
+                case 85: //U
+                    e.preventDefault();
+                    upload();
                     break;
             }
         }
     });
 
-    $("#new").click(newFile);
-    $("#download").click(download);
-    $("#upload").click(upload);
-    $("#theme").click(themeSwitch);
+    var fileReader = new FileReader();
+    fileReader.onload = function (){
+        edit.setValue(fileReader.result);
+    };
 
-    $("#fullscreen").click(fullscreen);
-    $("#windowOpen").click(windowOpen);
-    $("#switch").click(switchFocus);
-    $("#clear").click(clear);
-    $("#restart").click(restart);
+    $("#fileUpload").change(function(){
+        fileReader.readAsText($('#fileUpload').prop('files')[0]);
+    });
 
     $("#display").click(function(){
         if($("#display").html() == "More.."){

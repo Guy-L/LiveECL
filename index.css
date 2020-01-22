@@ -154,6 +154,25 @@ select{
     transition: 0.3s;
 }
 
+#charSelection{
+  width:100%;
+  max-height:100%;
+}
+
+#charTable{
+  border:1px solid red;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 0px;
+  margin-left: auto;
+  height:100%;
+}
+
+#charTable img{
+  width:5px;
+  height:5px;
+}
+
 #action{
   display:table;	
   width:100%;
@@ -166,6 +185,13 @@ select{
   width: 50%;
 }
 
+.edit{
+  background-image: linear-gradient(#FFFFFF 50%, #F9F9F9 50%) !important;
+  background-size: 100% 38px !important;
+  background-position: 0px 24px !important;
+  transition:0.5s;
+}
+
 #edit{
   width: 100% ;
   min-width:65vw;
@@ -175,6 +201,11 @@ select{
   background-size: 100% 30px;
   line-height:15px;
   text-align:left;
+}
+
+.night{
+  filter: invert(80%);
+  transition:0.5s;
 }
 
 #terminal{
@@ -194,6 +225,7 @@ select{
   position:absolute;
   z-index:5;
   opacity:0.4;
+  transition:0.2s;
 }
 
 #editPanel:hover, #gamePanel:hover{
@@ -223,11 +255,22 @@ select{
   cursor: pointer;
 }
 
+.panelButton a{
+  display:block;
+  width:100%;
+  height:100%;
+}
+
 .panelButton img{
   width: 70%;
   height: auto;
   display:block;
   margin:0 auto;
+}
+
+#fileUpload{
+  position:absolute;
+  opacity:0;
 }
 
 .tiny{

@@ -50,6 +50,17 @@
 			<div class="opt"><input type="checkbox" id="s">Basic</div>
 			<div class="opt"><input type="text" id="entry" value="main" maxlength="25"> Entry</div>
 			<div id="display">More..</div>
+<!--			<div id="charSelection">-->
+<!--				<table id="charTable">-->
+<!--					<tr>-->
+<!--						<th><img src="assets/random.png"></th>-->
+<!--						<th><img src="assets/reimu.png"></th>-->
+<!--						<th><img src="assets/marisa.png"></th>-->
+<!--						<th><img src="assets/sanae.png"></th>-->
+<!--						<th><img src="assets/youmu2.png"></th>-->
+<!--					</tr>-->
+<!--				</table>-->
+<!--			</div>-->
 		</div>
 		<div id="action">
 			<div id="editor">
@@ -75,10 +86,10 @@ void main()
 }</textarea>
 			<table id="editPanel">
 				<tr>
-					<th class="panelButton" id="new"><img src="assets/new.png" alt="N"></th>
-					<th class="panelButton" id="theme"><img src="assets/night.png" alt="T"></th>
-					<th class="panelButton" id="upload"><img src="assets/upload.png" alt="U"></th>
-					<th class="panelButton" id="download"><img src="assets/download.png" alt="D"></th>
+					<th class="panelButton" id="new" onclick="newFile();"><img src="assets/new.png" alt="N"></th>
+					<th class="panelButton" id="theme" onclick="toggleTheme();"><img src="assets/night.png" alt="T"></th>
+					<th class="panelButton" id="upload" onclick="upload();"><img src="assets/upload.png" alt="U"></th>
+					<th class="panelButton" id="download" onclick="downloadFn();"><a><img src="assets/download.png" alt="D"></a></th>
 				</tr>
 			</table>
 			</div>
@@ -86,18 +97,17 @@ void main()
 				<iframe id="gameWindow" src="game.html"></iframe>
 				<table id="gamePanel">
 					<tr>
-						<th style="width:35px"></th>
-						<th class="panelButton" id="fullscreen"><img src="assets/fullscreen.png" alt="F"></th>
-						<th class="panelButton" id="windowOpen"><img src="assets/external.png" alt="E"></th>
+						<th class="panelButton" id="fullscreen" onclick="fullscreen();"><img src="assets/fullscreen.png" alt="F"></th>
+						<th class="panelButton" id="windowOpen" onclick="windowOpen();"><img src="assets/external.png" alt="E"></th>
 					</tr>
 					<tr>
-						<th class="panelButton" id="switch"><img src="assets/switch.png" alt="S"></th>
-						<th class="panelButton" id="clear"><img src="assets/clear.png" alt="C"></th>
-						<th class="panelButton" id="restart"><img src="assets/restart.png" alt="R"></th>
+						<th class="panelButton" id="clear" onclick="clearBullets();"><img src="assets/clear.png" alt="C"></th>
+						<th class="panelButton" id="restart" onclick="restart();"><img src="assets/restart.png" alt="R"></th>
 					</tr>
 				</table>
 			</div>
 		</div>
-		<div id="terminal"><br><b>LiveECL v1.4.1:</b> now with fancy editor!<br><b>Alt+S:</b> switches focus, &nbsp;&nbsp;&nbsp; <b>Alt+R:</b> restarts the game,<br><b>Alt+C:</b> clears all bullets, <b>Alt+F:</b> fullscreen.<br><br></div>
+		<div id="terminal"><br><b>LiveECL v1.4.2:</b> now with more functionalities!<br><b>Alt+S:</b> switches focus, &nbsp;&nbsp;&nbsp; <b>Alt+R:</b> restarts the game,<br><b>Alt+C:</b> clears all bullets, <b>Alt+F:</b> fullscreen.<br><i>... and much more!</i><br></div>
+		<input type="file" id="fileUpload" accept=".ecs, .txt, .tecl">
 	</body>
 </html>
