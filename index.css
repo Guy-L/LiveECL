@@ -226,6 +226,11 @@ select{
   z-index:5;
   opacity:0.4;
   transition:0.2s;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 #editPanel:hover, #gamePanel:hover{
@@ -271,6 +276,7 @@ select{
 #fileUpload{
   position:absolute;
   opacity:0;
+  top:0;
 }
 
 .tiny{
