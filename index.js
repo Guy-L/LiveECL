@@ -69,12 +69,17 @@ function downloadFn(){
     } dlCount++;
 }
 
-function fullscreen(){ //todo
-    unhandledF = true;
+function fullscreen(){
+    if(document.fullscreenEnabled) {
+        document.querySelector("#gameWindow").requestFullscreen();
+        $("#gameWindow").focus();
+    } else {
+        printTerminal("<span class=\"warning\"><i>Sorry, your browser does not support fullscreen viewing.</i></span>");
+    }
 }
 
 function windowOpen(){ //todo
-    alert("nope not yet either :(");
+    window.open("game.html", "test", "width=384, height=448, location=no, menubar=no, toolbar=no, titlebar=no");
 }
 
 function clearBullets(){
@@ -122,7 +127,7 @@ $(document).ready(function() {
 
                 case 69: //E
                     e.preventDefault();
-                    windowOpen();
+                    printTerminal("<span class=\"warning\">Sorry, the <b>E</b>xternal feature only works when clicking the button.</span>");
                     break;
 
                 case 70: //F
@@ -176,6 +181,13 @@ $(document).ready(function() {
             $("#display").html("More..");
         }
     });
+
+    $("#charTable img").click(function(event){
+        if($(this).attr("data-value") != 4){
+            $(".selected").removeClass("selected");
+            $(this).addClass("selected");
+        }
+    })
 
     socket.on('connect', function(){
         var button = $('#button');

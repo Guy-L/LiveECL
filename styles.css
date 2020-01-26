@@ -4,7 +4,7 @@ canvas {
 }
 
 body {
-    background-color: white;
+    background-image: url("assets/bg.png");
 }
 
 .superdev {

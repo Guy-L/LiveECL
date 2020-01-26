@@ -140,7 +140,6 @@ select{
     -o-box-shadow: 0px 0px 10px rgba(242,155,0,0.8);
 
     text-align: center;
-
     display: inline-block;
 }
 
@@ -154,23 +153,37 @@ select{
     transition: 0.3s;
 }
 
-#charSelection{
+/*#charSelection{
   width:100%;
   max-height:100%;
+  opacity:0;
+  transition:0.2s;
+}*/
+
+.opaque{
+  opacity:1 !important;
 }
 
 #charTable{
-  border:1px solid red;
-  margin-top: 0;
-  margin-bottom: 0;
+  position:absolute;
   margin-right: 0px;
-  margin-left: auto;
   height:100%;
+  z-index:100;
+  top: -37.5vh;
+  right: 30px;
+  opacity:0;
+  transition:0.2s;
 }
 
 #charTable img{
-  width:5px;
-  height:5px;
+  padding: 2px;
+  margin: -2px;
+  border-radius:5px;
+  background-color:none;
+}
+
+#charTable img.selected{
+  background-color:gray;
 }
 
 #action{
@@ -277,6 +290,10 @@ select{
   position:absolute;
   opacity:0;
   top:0;
+}
+
+#game:hover{
+  cursor:none; //todo
 }
 
 .tiny{

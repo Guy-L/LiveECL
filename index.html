@@ -22,6 +22,7 @@
 		<div id="header">
 			<img src="assets/logo.png" alt="logo">
 		</div>
+
 		<div id="info">
 			<div id="button">Automatic</div>
 			<select id="ver">
@@ -50,18 +51,19 @@
 			<div class="opt"><input type="checkbox" id="s">Basic</div>
 			<div class="opt"><input type="text" id="entry" value="main" maxlength="25"> Entry</div>
 			<div id="display">More..</div>
-<!--			<div id="charSelection">-->
-<!--				<table id="charTable">-->
-<!--					<tr>-->
-<!--						<th><img src="assets/random.png"></th>-->
-<!--						<th><img src="assets/reimu.png"></th>-->
-<!--						<th><img src="assets/marisa.png"></th>-->
-<!--						<th><img src="assets/sanae.png"></th>-->
-<!--						<th><img src="assets/youmu2.png"></th>-->
-<!--					</tr>-->
-<!--				</table>-->
-<!--			</div>-->
+			<div id="charSelection">
+				<table id="charTable">
+					<tr>
+						<th><img data-value=0 src="assets/random.png" class="selected" ></th>
+						<th><img data-value=1 src="assets/reimu.png"></th>
+						<th><img data-value=2 src="assets/marisa.png"></th>
+						<th><img data-value=3 src="assets/sanae.png"></th>
+						<th><img data-value=4 src="assets/youmu2.png"></th>
+					</tr>
+				</table>
+			</div>
 		</div>
+
 		<div id="action">
 			<div id="editor">
 				<textarea id="edit">
@@ -107,7 +109,7 @@ void main()
 				</table>
 			</div>
 		</div>
-		<div id="terminal"><br><b>LiveECL v1.4.2:</b> now with more functionalities!<br><b>Alt+S:</b> switches focus, &nbsp;&nbsp;&nbsp; <b>Alt+R:</b> restarts the game,<br><b>Alt+C:</b> clears all bullets, <b>Alt+F:</b> fullscreen.<br><i>... and much more!</i><br></div>
+		<div id="terminal"><br><b>LiveECL v1.4.4:</b> now with new-window viewing feature!<br><b>Alt+S:</b> switches focus, &nbsp;&nbsp;&nbsp; <b>Alt+R:</b> restarts the game,<br><b>Alt+C:</b> clears all bullets, <b>Alt+F:</b> fullscreen.<br><i>... and much more!</i><br></div>
 		<input type="file" id="fileUpload" accept=".ecs, .txt, .tecl">
 	</body>
 </html>
