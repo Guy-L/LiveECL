@@ -4,6 +4,7 @@
 		<meta charset="utf-8">
 		<title>Live ECL Interpreter</title>
 		<link rel="stylesheet" type="text/css" href="index.css">
+		<link rel="stylesheet" type="text/css" href="indexMobile.css" id="mobile" media="(max-width: 760px)">
 		<link rel="icon" href="assets/fav.ico">
 
 		<script src="libs/codemirror/lib/codemirror.js"></script>
@@ -47,69 +48,72 @@
 				<option value=2>Hard</option>
 				<option value=3>Lunatic &nbsp;</option>
 			</select>
-			<div class="opt"><input type="checkbox" id="old">Old Maps</div>
+			<div class="opt"><input type="checkbox" id="old">Old&nbsp;Maps</div>
 			<div class="opt"><input type="checkbox" id="s">Basic</div>
-			<div class="opt"><input type="text" id="entry" value="main" maxlength="25"> Entry</div>
+			<div class="opt"><input type="text" id="entry" value="main" maxlength="25">&nbsp;Entry</div>
 			<div id="display">More..</div>
-			<div id="charSelection">
-				<table id="charTable">
-					<tr>
-						<th><img data-value=0 src="assets/random.png" class="selected" ></th>
-						<th><img data-value=1 src="assets/reimu.png"></th>
-						<th><img data-value=2 src="assets/marisa.png"></th>
-						<th><img data-value=3 src="assets/sanae.png"></th>
-						<th><img data-value=4 src="assets/youmu2.png"></th>
-					</tr>
-				</table>
-			</div>
 		</div>
 
-		<div id="action">
-			<div id="editor">
-				<textarea id="edit">
+		<div id="main">
+			<div id="action">
+				<div id="editor">
+					<textarea id="edit">
 void main()
 {
-    etNew(0);
-    etSprite(0, ET_RICE, COLOR16_PINK);
+	etNew(0);
+	etSprite(0, ET_RICE, COLOR16_PINK);
 
-    etAim(0, AIM_AT);
-    etCount(0, 2:4:6:8, 2:4:6:8);
-    etSpeed(0, 3f, 2f);
-    etAngle(0, 0f, rad(15));
+	etAim(0, AIM_AT);
+	etCount(0, 2:4:6:8, 2:4:6:8);
+	etSpeed(0, 3f, 2f);
+	etAngle(0, 0f, rad(15));
 
-    etEx(0, 0, EX_DIST, NEG, NEG, NEGF, NEGF);
+	etEx(0, 0, EX_DIST, NEG, NEG, NEGF, NEGF);
 
-    while(1)
-    {
-        etOffset(0, RANDF2*40f, RANDF2*40f);
-        etOn(0);
-        wait(75);
-    }
+	while(1)
+	{
+		etOffset(0, RANDF2*40f, RANDF2*40f);
+		etOn(0);
+		wait(75);
+	}
 }</textarea>
-			<table id="editPanel">
-				<tr>
-					<th class="panelButton" id="new" onclick="newFile();"><img src="assets/new.png" alt="N"></th>
-					<th class="panelButton" id="theme" onclick="toggleTheme();"><img src="assets/night.png" alt="T"></th>
-					<th class="panelButton" id="upload" onclick="upload();"><img src="assets/upload.png" alt="U"></th>
-					<th class="panelButton" id="download" onclick="downloadFn();"><a><img src="assets/download.png" alt="D"></a></th>
-				</tr>
-			</table>
+					<table id="editPanel" style="left:15px">
+						<tr>
+							<th class="panelButton" id="new" onclick="newFile();"><img src="assets/new.png" alt="N"></th>
+							<th class="panelButton" id="theme" onclick="toggleTheme();"><img src="assets/night.png" alt="T"></th>
+							<th class="panelButton" id="upload" onclick="upload();"><img src="assets/upload.png" alt="U"></th>
+							<th class="panelButton" id="download" onclick="downloadFn();"><a><img src="assets/download.png" alt="D"></a></th>
+							<th class="panelButton" id="windowClose" onclick="windowClose();"><img src="assets/internal.png" alt="I"></th>
+							<th class="panelButton" id="down" onclick="down();"><img src="assets/down.png" alt="↓"></th>
+						</tr>
+					</table>
+				</div>
+				<div id="game">
+					<iframe id="gameWindow" src="game.html"></iframe>
+					<table id="gamePanel" style="right:15px">
+						<tr>
+							<th class="panelButton" id="fullscreen" onclick="fullscreen();"><img src="assets/fullscreen.png" alt="F"></th>
+							<th class="panelButton" id="windowOpen" onclick="windowOpen();"><img src="assets/external.png" alt="E"></th>
+							<th class="panelButton" id="up" onclick="up();"><img src="assets/up.png" alt="↑"></th>
+						</tr>
+						<tr>
+							<th class="panelButton" id="clear" onclick="clearBullets();"><img src="assets/clear.png" alt="C"></th>
+							<th class="panelButton" id="restart" onclick="restart();"><img src="assets/restart.png" alt="R"></th>
+						</tr>
+					</table>
+					<table id="charTable">
+						<tr>
+							<th><img data-value=0 src="assets/random.png" class="selected" ></th>
+							<th><img data-value=1 src="assets/reimu.png"></th>
+							<th><img data-value=2 src="assets/marisa.png"></th>
+							<th><img data-value=3 src="assets/sanae.png"></th>
+							<th><img data-value=4 src="assets/youmu2.png"></th>
+						</tr>
+					</table>
+				</div>
 			</div>
-			<div id="game">
-				<iframe id="gameWindow" src="game.html"></iframe>
-				<table id="gamePanel">
-					<tr>
-						<th class="panelButton" id="fullscreen" onclick="fullscreen();"><img src="assets/fullscreen.png" alt="F"></th>
-						<th class="panelButton" id="windowOpen" onclick="windowOpen();"><img src="assets/external.png" alt="E"></th>
-					</tr>
-					<tr>
-						<th class="panelButton" id="clear" onclick="clearBullets();"><img src="assets/clear.png" alt="C"></th>
-						<th class="panelButton" id="restart" onclick="restart();"><img src="assets/restart.png" alt="R"></th>
-					</tr>
-				</table>
-			</div>
+			<div id="terminal"><br><b>LiveECL v1.4.5:</b> now <span class="tiny">(partial)</span> mobile support!<br><b>Alt+S:</b> switches focus, &nbsp;&nbsp;&nbsp; <b>Alt+R:</b> restarts the game,<br><b>Alt+C:</b> clears all bullets, <b>Alt+F:</b> fullscreen.<br><i>... and much more!</i><br></div>
 		</div>
-		<div id="terminal"><br><b>LiveECL v1.4.4:</b> now with new-window viewing feature!<br><b>Alt+S:</b> switches focus, &nbsp;&nbsp;&nbsp; <b>Alt+R:</b> restarts the game,<br><b>Alt+C:</b> clears all bullets, <b>Alt+F:</b> fullscreen.<br><i>... and much more!</i><br></div>
 		<input type="file" id="fileUpload" accept=".ecs, .txt, .tecl">
 	</body>
 </html>

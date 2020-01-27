@@ -1,0 +1,42 @@
+body{
+  overflow: scroll;
+}
+
+#header img{
+  width:70%;
+  height:80%;
+}
+
+#main{
+  height: auto;
+}
+
+#game{
+  height:700px;
+}
+
+#action{
+  flex-wrap: wrap;
+}
+
+#info{
+  margin: 10px 0;
+
+  padding-top:5px;
+  border-top: 3px dashed gray;
+
+  padding-bottom:5px;
+  border-bottom: 3px dashed gray;
+}
+
+#up, #down{
+  display:table-cell;
+}
+
+#windowOpen{
+  display:none;
+}
+
+#terminal{
+  height:150px;
+}

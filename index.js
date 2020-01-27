@@ -3,6 +3,8 @@ var dlCount = 1;
 var edit;
 var unhandledC = false;
 var unhandledF = false;
+var isRefreshing = false;
+var newWindow;
 
 function printTerminal(out){
     var term = $('#terminal');
@@ -71,15 +73,40 @@ function downloadFn(){
 
 function fullscreen(){
     if(document.fullscreenEnabled) {
-        document.querySelector("#gameWindow").requestFullscreen();
-        $("#gameWindow").focus();
+        if(newWindow == undefined){
+            document.querySelector("#gameWindow").requestFullscreen();
+            $("#gameWindow").focus();
+        } else {
+            newWindow.document.getElementById('html').requestFullscreen();
+        }
     } else {
         printTerminal("<span class=\"warning\"><i>Sorry, your browser does not support fullscreen viewing.</i></span>");
     }
 }
 
-function windowOpen(){ //todo
-    window.open("game.html", "test", "width=384, height=448, location=no, menubar=no, toolbar=no, titlebar=no");
+function windowOpen(){
+    newWindow = window.open("game.html", "test", "width=384, height=448, location=no, menubar=no, toolbar=no, titlebar=no");
+    $("#game").hide();
+    $("#windowClose").show();
+    $(".CodeMirror").width("100vw");
+    $(".CodeMirror").css("resize","none");
+
+}
+
+function windowClose(){
+  newWindow.close();
+  gameRestore();
+}
+
+function gameRestore(){
+    if(isRefreshing) isRefreshing = false;
+    else{
+        newWindow = undefined;
+        $("#game").show();
+        $("#windowClose").hide();
+        $(".CodeMirror").width("71.5vw");
+        $(".CodeMirror").css("resize","both");
+    }
 }
 
 function clearBullets(){
@@ -87,12 +114,32 @@ function clearBullets(){
 }
 
 function restart(){
-    var game = $('#gameWindow');
-    if(game.length){
+    if(newWindow == undefined){
+        var game = $('#gameWindow');
+        if(game.length){
+            printTerminal("<span class=\"gameLog\">GAME:</span> <i>Reloading...</i>");
+            game.attr('src', function (i, val) {return val;});
+        }
+    } else {
         printTerminal("<span class=\"gameLog\">GAME:</span> <i>Reloading...</i>");
-        game.attr('src', function (i, val) {return val;});
+        windowOpen();
+        isRefreshing = true;
     }
 }
+
+function down(){
+    $('html, body').animate({
+        scrollTop: $('html, body').height()
+    }, 'smooth');
+}
+
+function up(){
+    $('html, body').animate({
+        scrollTop: 0
+    }, 'smooth');
+}
+
+
 
 $(document).ready(function() {
     var socket = io.connect('https://live-ecl.herokuapp.com/');
@@ -110,7 +157,6 @@ $(document).ready(function() {
                     }
                    }
     }); edit.focus();
-    $(".CodeMirror").addClass("edit");
 
     $(document).keydown(function(e) {
         if(e.altKey) {
@@ -147,7 +193,11 @@ $(document).ready(function() {
 
                 case 83: //S
                     e.preventDefault();
-                    $("#gameWindow").focus();
+                    if(newWindow == undefined){
+                        $("#gameWindow").focus();
+                    } else {
+                        newWindow.focus();
+                    }
                     break;
 
                 case 84: //T
@@ -195,6 +245,8 @@ $(document).ready(function() {
         var auto = true;
         var canSend = true;
 
+        printTerminal("<span class=\"no-error\">Server:</span> Connected!");
+
         socket.emit('sendECL', {val: edit.getValue(),
                                 ver: $('#ver').val(),
                                 old: $('#old').is(":checked"),
@@ -212,6 +264,10 @@ $(document).ready(function() {
                                                   .replace(/invalid/g,"<span class=\"error\">invalid</span>")
                                                   .replace(/warning/g,"<span class=\"warning\">warning</span>")
                                                   .replace(/thecl(:\(stdin\))*/g,"<span class=\"compLog\">Compiler</span>"));
+        });
+
+        socket.on('disconnect', function(){
+            printTerminal("<span class=\"no-error\">Server:</span> <span class=\"warning\">Disconnected.</span>");
         });
 
 
@@ -258,4 +314,17 @@ $(document).ready(function() {
             }
         });
     });
+});
+
+$(window).on("orientationchange", function(){
+    if(window.orientation == 0 && /Mobi|Android/i.test(navigator.userAgent)){
+        $('#mobile').attr('media', 'all');
+    } else {
+        $('#mobile').attr('media', '(max-width: 760px)');
+    }
+
+});
+
+$(window).on("unload", function(e) {
+    if(newWindow!=undefined) newWindow.close();
 });

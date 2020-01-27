@@ -1,20 +1,33 @@
 /* BASICS */
 
 .CodeMirror {
-  /* Set height, width, borders, and global font properties here */
+  background-image: linear-gradient(#FFFFFF 50%, #F9F9F9 50%) !important;
+  background-size: 100% 38px !important;
+  background-position: 0px 24px !important;
+
   font-family: monospace;
-  height: 70vh;
   color: black;
   direction: ltr;
-
-  vertical-align:top;
-  width: 100%;
-  min-width:65vw;
-  max-width:75vw;
   text-align:left;
 
-  position: relative !important;
-  bottom: 5px;
+  height: 70vh;
+  min-height: 40vh;
+  max-height:85vh;
+
+  width: 71.5vw;
+  min-width: 50vw;
+  max-width: 100vw;
+  resize: both;
+}
+
+
+@media screen and (max-width: 764px) {
+    .CodeMirror {
+      width:100%;
+      resize: none;
+      font-size:0.9em;
+      background-size: 100% 33.6px !important;
+    }
 }
 
 /* PADDING */
@@ -332,7 +345,7 @@ div.CodeMirror-dragcursors {
 
 .CodeMirror-selected { background: #d9d9d9; }
 .CodeMirror-focused .CodeMirror-selected { background: #d7d4f0; }
-.CodeMirror-crosshair { cursor: crosshair; }
+.CodeMirror-crosshair {}
 .CodeMirror-line::selection, .CodeMirror-line > span::selection, .CodeMirror-line > span > span::selection { background: #d7d4f0; }
 .CodeMirror-line::-moz-selection, .CodeMirror-line > span::-moz-selection, .CodeMirror-line > span > span::-moz-selection { background: #d7d4f0; }
 
