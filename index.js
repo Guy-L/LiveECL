@@ -113,6 +113,14 @@ function clearBullets(){
     unhandledC = true;
 }
 
+function updateMedia(){
+    if(window.orientation == 0 && /Mobi|Android/i.test(navigator.userAgent)){
+        $('#mobile').attr('media', 'all');
+    } else {
+        $('#mobile').attr('media', '(max-width: 760px)');
+    }
+}
+
 function restart(){
     if(newWindow == undefined){
         var game = $('#gameWindow');
@@ -143,6 +151,7 @@ function up(){
 
 $(document).ready(function() {
     var socket = io.connect('https://live-ecl.herokuapp.com/');
+    updateMedia();
 
     edit = CodeMirror.fromTextArea(document.getElementById("edit"), {
     	lineNumbers: true,
@@ -316,14 +325,8 @@ $(document).ready(function() {
     });
 });
 
-$(window).on("orientationchange", function(){
-    if(window.orientation == 0 && /Mobi|Android/i.test(navigator.userAgent)){
-        $('#mobile').attr('media', 'all');
-    } else {
-        $('#mobile').attr('media', '(max-width: 760px)');
-    }
-
-});
+$(window).on("orientationchange", updateMedia);
+$(window).on("focus", updateMedia);
 
 $(window).on("unload", function(e) {
     if(newWindow!=undefined) newWindow.close();
