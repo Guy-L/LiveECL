@@ -147,10 +147,28 @@ function up(){
     }, 'smooth');
 }
 
+function showInfo(event){
+    var menu = $("#infoMenu");
+    if(menu.length){
+        event.stopPropagation();
+        menu.show();
+        $('#header, #info, #main').css("filter", "brightness(30%)");
+        $('#header, #info, #main').on("click touchstart", hideInfo);
+    }
+}
 
+function hideInfo(){
+    var menu = $("#infoMenu");
+    if(menu.length){
+        menu.hide();
+        $('#header, #info, #main').css("filter", "none");
+        $('#header, #info, #main').unbind("click touchstart");
+    }
+}
 
 $(document).ready(function() {
     var socket = io.connect('https://live-ecl.herokuapp.com/');
+    $(".default").click();
     updateMedia();
 
     edit = CodeMirror.fromTextArea(document.getElementById("edit"), {
@@ -168,8 +186,9 @@ $(document).ready(function() {
     }); edit.focus();
 
     $(document).keydown(function(e) {
+        if(e.key === "Escape") hideInfo();
         if(e.altKey) {
-            switch(e.keyCode){ //todo all
+            switch(e.keyCode){ //todo I
                 case 67: //C
                     e.preventDefault();
                     clearBullets();
@@ -188,6 +207,11 @@ $(document).ready(function() {
                 case 70: //F
                     e.preventDefault();
                     fullscreen();
+                    break;
+
+                case 73: //I
+                    e.preventDefault();
+                    windowClose();
                     break;
 
                 case 78: //N
@@ -235,9 +259,11 @@ $(document).ready(function() {
         if($("#display").html() == "More.."){
             $(".opt").css("display", "inline-block");
             $("#display").html("Less..");
+            $("#display").attr("data-tip", "Click\u00A0to\u00A0see less\u00A0options.");
         } else {
             $(".opt").css("display", "none");
             $("#display").html("More..");
+            $("#display").attr("data-tip", "Click\u00A0to\u00A0see more\u00A0options!");
         }
     });
 
@@ -325,9 +351,18 @@ $(document).ready(function() {
     });
 });
 
+function showTab(evt, tabName) {
+  $(".tabcontent").hide();
+  $(".tablinks").removeClass("active");
+
+  $("#"+tabName).show();
+  $(evt.target).addClass("active");
+}
+
 $(window).on("orientationchange", updateMedia);
 $(window).on("focus", updateMedia);
 
 $(window).on("unload", function(e) {
     if(newWindow!=undefined) newWindow.close();
 });
+

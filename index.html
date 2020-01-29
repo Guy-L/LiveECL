@@ -21,7 +21,7 @@
 
 	<body>
 		<div id="header">
-			<img src="assets/logo.png" alt="logo">
+			<img src="assets/logo.png" alt="logo" onclick="showInfo(event);">
 		</div>
 
 		<div id="info">
@@ -48,10 +48,14 @@
 				<option value=2>Hard</option>
 				<option value=3>Lunatic &nbsp;</option>
 			</select>
-			<div class="opt"><input type="checkbox" id="old">Old&nbsp;Maps</div>
-			<div class="opt"><input type="checkbox" id="s">Basic</div>
-			<div class="opt"><input type="text" id="entry" value="main" maxlength="25">&nbsp;Entry</div>
-			<div id="display">More..</div>
+			<div class="opt" data-tip="Use&nbsp;deprecated&nbsp;ECL&nbsp;maps.&nbsp;If&nbsp;you&nbsp;don't&nbsp;know what&nbsp;this&nbsp;means,&nbsp;don't&nbsp;use&nbsp;it.">
+				<input type="checkbox" id="old">Old&nbsp;Maps</div>
+			<div class="opt" data-tip="Use&nbsp;'simple'&nbsp;compiler&nbsp;mode,&nbsp;equivalent&nbsp;to&nbsp;'-s'. Disallows&nbsp;modern&nbsp;formatting&nbsp;among&nbsp;other&nbsp;things.">
+				<input type="checkbox" id="s">Basic</div>
+			<div class="opt" data-tip="Sets&nbsp;which&nbsp;sub&nbsp;the&nbsp;game&nbsp;should&nbsp;run&nbsp;first. Defaults&nbsp;to&nbsp;'main'.">
+				<input type="text" id="entry" value="main" maxlength="25">&nbsp;Entry</div>
+			<div id="display" data-tip="Click&nbsp;to&nbsp;see more&nbsp;options!">More..</div>
+			<div data-tip="Click&nbsp;me!" style="height:16px"><img id="orb" onclick="showInfo(event);" src="assets/info.png" alt="Info"></div>
 		</div>
 
 		<div id="main">
@@ -79,11 +83,11 @@ void main()
 }</textarea>
 					<table id="editPanel" style="left:15px">
 						<tr>
-							<th class="panelButton" id="new" onclick="newFile();"><img src="assets/new.png" alt="N"></th>
-							<th class="panelButton" id="theme" onclick="toggleTheme();"><img src="assets/night.png" alt="T"></th>
-							<th class="panelButton" id="upload" onclick="upload();"><img src="assets/upload.png" alt="U"></th>
-							<th class="panelButton" id="download" onclick="downloadFn();"><a><img src="assets/download.png" alt="D"></a></th>
-							<th class="panelButton" id="windowClose" onclick="windowClose();"><img src="assets/internal.png" alt="I"></th>
+							<th data-tip="New&nbsp;file. (Alt)&nbsp;N" class="panelButton" id="new" onclick="newFile();"><img src="assets/new.png" alt="N"></th>
+							<th data-tip="Toggle&nbsp;theme. (Alt)&nbsp;T" class="panelButton" id="theme" onclick="toggleTheme();"><img src="assets/night.png" alt="T"></th>
+							<th data-tip="Upload&nbsp;file. (Alt)&nbsp;U" class="panelButton" id="upload" onclick="upload();"><img src="assets/upload.png" alt="U"></th>
+							<th data-tip="Download&nbsp;file. (Alt)&nbsp;D" class="panelButton" id="download" onclick="downloadFn();"><a><img src="assets/download.png" alt="D"></a></th>
+							<th data-tip="Close&nbsp;window. (Alt)&nbsp;I" class="panelButton" id="windowClose" onclick="windowClose();"><img src="assets/internal.png" alt="I"></th>
 							<th class="panelButton" id="down" onclick="down();"><img src="assets/down.png" alt="↓"></th>
 						</tr>
 					</table>
@@ -92,13 +96,13 @@ void main()
 					<iframe id="gameWindow" src="game.html"></iframe>
 					<table id="gamePanel" style="right:15px">
 						<tr>
-							<th class="panelButton" id="fullscreen" onclick="fullscreen();"><img src="assets/fullscreen.png" alt="F"></th>
-							<th class="panelButton" id="windowOpen" onclick="windowOpen();"><img src="assets/external.png" alt="E"></th>
+							<th data-tip="Fullscreen&nbsp;mode. (Alt)&nbsp;F" class="panelButton" id="fullscreen" onclick="fullscreen();"><img src="assets/fullscreen.png" alt="F"></th>
+							<th data-tip="External&nbsp;window. (Alt)&nbsp;E" class="panelButton" id="windowOpen" onclick="windowOpen();"><img src="assets/external.png" alt="E"></th>
 							<th class="panelButton" id="up" onclick="up();"><img src="assets/up.png" alt="↑"></th>
 						</tr>
 						<tr>
-							<th class="panelButton" id="clear" onclick="clearBullets();"><img src="assets/clear.png" alt="C"></th>
-							<th class="panelButton" id="restart" onclick="restart();"><img src="assets/restart.png" alt="R"></th>
+							<th data-tip="Clears&nbsp;bullets. (Alt)&nbsp;C" class="panelButton" id="clear" onclick="clearBullets();"><img src="assets/clear.png" alt="C"></th>
+							<th data-tip="Restart&nbsp;game. (Alt)&nbsp;R" class="panelButton" id="restart" onclick="restart();"><img src="assets/restart.png" alt="R"></th>
 						</tr>
 					</table>
 					<table id="charTable">
@@ -112,8 +116,51 @@ void main()
 					</table>
 				</div>
 			</div>
-			<div id="terminal"><br><b>LiveECL v1.4.5:</b> now <span class="tiny">(partial)</span> mobile support!<br><b>Alt+S:</b> switches focus, &nbsp;&nbsp;&nbsp; <b>Alt+R:</b> restarts the game,<br><b>Alt+C:</b> clears all bullets, <b>Alt+F:</b> fullscreen.<br><i>... and much more!</i><br></div>
+
+			<div id="terminal"><br><b>LiveECL v1.4.7:</b> now with tooltips and a main menu!<br><b>Alt+S:</b> switches focus, &nbsp;&nbsp;&nbsp; <b>Alt+R:</b> restarts the game,<br><b>Alt+C:</b> clears all bullets, <b>Alt+F:</b> fullscreen.<br><i>... and much more!</i><br></div>
 		</div>
 		<input type="file" id="fileUpload" accept=".ecs, .txt, .tecl">
+		<div id="infoMenu">
+			<div id="tab">
+				<button class="tablinks default" onclick="showTab(event, 'about')">About</button>
+				<button class="tablinks" onclick="showTab(event, 'features')">Features</button>
+				<button class="tablinks" onclick="showTab(event, 'progress')">Progress</button>
+				<button class="tablinks" onclick="showTab(event, 'documentation')">Documentation</button>
+				<button class="tablinks" onclick="showTab(event, 'database')">Database</button>
+				<button class="tablinks" onclick="showTab(event, 'options')">Options</button>
+			</div>
+
+			<div id="about" class="tabcontent">
+				<h3>About</h3>
+				<p>About</p>
+			</div>
+
+			<div id="features" class="tabcontent">
+				<h3>Features</h3>
+				<p>Features</p>
+			</div>
+
+			<div id="progress" class="tabcontent">
+				<h3>Progress</h3>
+				<p>Progress</p>
+			</div>
+
+			<div id="documentation" class="tabcontent">
+				<h3>Documentation</h3>
+				<p>Documentation</p>
+			</div>
+
+			<div id="database" class="tabcontent">
+				<h3>Database</h3>
+				<p>Database</p>
+			</div>
+
+			<div id="options" class="tabcontent">
+				<h3>Options</h3>
+				<p>Options</p>
+			</div>
+
+			<img src="assets/close.png" id="menuClose" onclick="hideInfo();" alt="Close">
+		</div>
 	</body>
 </html>

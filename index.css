@@ -26,63 +26,65 @@ iframe{
 
 #header img{
   height:90%;
+  cursor:pointer;
 }
 
 #info{
-    text-align: left;
-    display: flex;
-    flex-wrap:wrap;
-    align-items: center;
+  text-align: left;
+  display: flex;
+  flex-wrap:wrap;
+  align-items: center;
+  padding-bottom:2px;
 
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 #button{
-    background-image: linear-gradient(to right, #66c2ff, #006bb3);
-    width: 10vw;
-    min-width: 95px;
-    height: 18px;
-    margin: 0 15px;
-    border-radius: 5px;
-    font-weight: bold;
+  background-image: linear-gradient(to right, #66c2ff, #006bb3);
+  width: 10vw;
+  min-width: 95px;
+  height: 18px;
+  margin: 0 15px;
+  border-radius: 5px;
+  font-weight: bold;
 
-    box-shadow: 0px 0px 10px rgba(0,153,255,0.8);
-    -moz-box-shadow: 0px 0px 10px rgba(0,153,255,0.8);
-    -webkit-box-shadow: 0px 0px 10px rgba(0,153,255,0.8);
-    -o-box-shadow: 0px 0px 10px rgba(0,153,255,0.8);
+  box-shadow: 0px 0px 10px rgba(0,153,255,0.8);
+  -o-box-shadow: 0px 0px 10px rgba(0,153,255,0.8);
+  -moz-box-shadow: 0px 0px 10px rgba(0,153,255,0.8);
+  -webkit-box-shadow: 0px 0px 10px rgba(0,153,255,0.8);
 
-    text-align: center;
+  text-align: center;
 
-    display: inline-block;
-    transition: 0.3s;
+  display: inline-block;
+  transition: 0.3s;
 }
 
 #button:hover{
-    cursor: pointer;
+  cursor: pointer;
 
-    box-shadow: 0px 0px 10px rgba(0,153,255,1);
-    -moz-box-shadow: 0px 0px 10px rgba(0,153,255,1);
-    -webkit-box-shadow: 0px 0px 10px rgba(0,153,255,1);
-    -o-box-shadow: 0px 0px 10px rgba(0,153,255,1);
-    transition: 0.3s;
+  box-shadow: 0px 0px 10px rgba(0,153,255,1);
+  -o-box-shadow: 0px 0px 10px rgba(0,153,255,1);
+  -moz-box-shadow: 0px 0px 10px rgba(0,153,255,1);
+  -webkit-box-shadow: 0px 0px 10px rgba(0,153,255,1);
+  transition: 0.3s;
 }
 
 .manual{
-    background-image: linear-gradient(to right, #70db70, #29a329) !important;
-    box-shadow: 0px 0px 10px rgba(51,204,51,0.8) !important;
-    -moz-box-shadow: 0px 0px 10px rgba(51,204,51,0.8) !important;
-    -webkit-box-shadow: 0px 0px 10px rgba(51,204,51,0.8) !important;
-    -o-box-shadow: 0px 0px 10px rgba(51,204,51,0.8) !important;
+  background-image: linear-gradient(to right, #70db70, #29a329) !important;
+  box-shadow: 0px 0px 10px rgba(51,204,51,0.8) !important;
+  -o-box-shadow: 0px 0px 10px rgba(51,204,51,0.8) !important;
+  -moz-box-shadow: 0px 0px 10px rgba(51,204,51,0.8) !important;
+  -webkit-box-shadow: 0px 0px 10px rgba(51,204,51,0.8) !important;
 }
 
 .manual:hover{
-    box-shadow: 0px 0px 10px rgba(51,204,51,1) !important;
-    -moz-box-shadow: 0px 0px 10px rgba(51,204,51,1) !important;
-    -webkit-box-shadow: 0px 0px 10px rgba(51,204,51,1) !important;
-    -o-box-shadow: 0px 0px 10px rgba(51,204,51,1) !important;
+  box-shadow: 0px 0px 10px rgba(51,204,51,1) !important;
+  -o-box-shadow: 0px 0px 10px rgba(51,204,51,1) !important;
+  -moz-box-shadow: 0px 0px 10px rgba(51,204,51,1) !important;
+  -webkit-box-shadow: 0px 0px 10px rgba(51,204,51,1) !important;
 }
 
 #btLeft{
@@ -105,58 +107,64 @@ iframe{
 }
 
 select{
-    border: 0px;
-    border-radius: 5px;
+  border: 0px;
+  border-radius: 5px;
 }
 
 #diff{
-    margin-left:10px;
+  margin-left:10px;
 }
 
 .opt{
-    border-left: 3px dotted white;
-    padding-left: 5px;
-    margin-left: 10px;
-    line-height:18px;
-    display: none;
+  border-left: 3px dotted white;
+  padding-left: 5px;
+  margin-left: 10px;
+  line-height:18px;
+  display: none;
 }
 
 .opt input[type=text]{
-    font-family: Courier New, Courier, Lucida Sans Typewriter, Lucida   Typewriter, monospace;
-    text-align: center;
-    width:100px;
+  font-family: Courier New, Courier, Lucida Sans Typewriter, Lucida   Typewriter, monospace;
+  text-align: center;
+  width:100px;
 }
 
 #display{
-    background-image: linear-gradient(to right, #ffc900, #f29b00);
-    width: 80px;
-    margin: 0 15px;
-    border-radius: 5px;
-    font-weight: bold;
+  background-image: linear-gradient(to right, #ffc900, #f29b00);
+  width: 80px;
+  margin: 0 15px;
+  border-radius: 5px;
+  font-weight: bold;
 
-    box-shadow: 0px 0px 10px rgba(242,155,0,0.8);
-    -moz-box-shadow: 0px 0px 10px rgba(242,155,0,0.8);
-    -webkit-box-shadow: 0px 0px 10px rgba(242,155,0,0.8);
-    -o-box-shadow: 0px 0px 10px rgba(242,155,0,0.8);
+  box-shadow: 0px 0px 10px rgba(242,155,0,0.8);
+  -o-box-shadow: 0px 0px 10px rgba(242,155,0,0.8);
+  -moz-box-shadow: 0px 0px 10px rgba(242,155,0,0.8);
+  -webkit-box-shadow: 0px 0px 10px rgba(242,155,0,0.8);
 
-    text-align: center;
-    display: inline-block;
+  text-align: center;
+  display: inline-block;
 }
 
 #display:hover{
-    cursor: pointer;
+  cursor: pointer;
 
-    box-shadow: 0px 0px 10px rgba(242,155,0,1);
-    -moz-box-shadow: 0px 0px 10px rgba(242,155,0,1);
-    -webkit-box-shadow: 0px 0px 10px rgba(242,155,0,1);
-    -o-box-shadow: 0px 0px 10px rgba(242,155,0,1);
-    transition: 0.3s;
+  box-shadow: 0px 0px 10px rgba(242,155,0,1);
+  -o-box-shadow: 0px 0px 10px rgba(242,155,0,1);
+  -moz-box-shadow: 0px 0px 10px rgba(242,155,0,1);
+  -webkit-box-shadow: 0px 0px 10px rgba(242,155,0,1);
+  transition: 0.3s;
+}
+
+#orb {
+  cursor: pointer;
+  -webkit-filter: drop-shadow(0px 0px 5px rgba(242,155,0,1));
+  filter: drop-shadow(0px 0px 5px #f29b00);
 }
 
 #charTable{
   position:absolute;
   height:100%;
-  z-index:100;
+  z-index:40;
 
   top: -50%;
   right: 30px;
@@ -181,9 +189,9 @@ select{
 }
 
 #main{
-  height:85vh;
   display:flex;
   flex-direction: column;
+  height:85vh;
 }
 
 #action{
@@ -207,13 +215,13 @@ select{
 
 .night{
   filter: invert(80%);
-  transition:0.5s;
 }
 
 #terminal{
   text-align: left;
   background-color: rgba(0,0,0,0.5);
   padding-left:1.5em;
+  height: 100%;
   overflow-y: scroll;
   flex-grow:1;
 }
@@ -235,6 +243,11 @@ select{
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+  -o-box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+  -moz-box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+  -webkit-box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
 }
 
 #editPanel:hover, #gamePanel:hover{
@@ -315,4 +328,120 @@ select{
   color:gray;
   font-weight: bold;
   letter-spacing: -3px;
+}
+
+[data-tip] {
+  position: relative;
+}
+
+[data-tip]:hover:after {
+  content: attr(data-tip);
+
+  position: absolute;
+  bottom:120%;
+
+  left: 50%;
+  transform: translateX(-50%);
+
+  padding: 10px;
+  background-image: url("assets/bg.png");
+  background-size: 9%;
+  background-repeat: repeat;
+
+  border: 2px solid black;
+  border-radius:25px;
+  z-index:40;
+
+  text-align:center;
+  font-size: 0.7em;
+
+  filter:brightness(110%);
+
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.8);
+  -o-box-shadow: 0px 0px 5px rgba(0,0,0,0.8);
+  -moz-box-shadow: 0px 0px 5px rgba(0,0,0,0.8);
+  -webkit-box-shadow: 0px 0px 5px rgba(0,0,0,0.8);
+
+  animation: fadeEffect 0.2s;
+}
+
+#infoMenu{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width:80%;
+  height:80%;
+
+  background-image: url("assets/bg.png");
+  background-repeat: repeat;
+
+  border: 2px solid black;
+  padding: 25px;
+  border-radius:25px;
+  z-index:50;
+  text-align:left;
+
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.8);
+  -o-box-shadow: 0px 0px 5px rgba(0,0,0,0.8);
+  -moz-box-shadow: 0px 0px 5px rgba(0,0,0,0.8);
+  -webkit-box-shadow: 0px 0px 5px rgba(0,0,0,0.8);
+
+  filter:none;
+
+  display:none;
+}
+
+#menuClose{
+  max-width:25px;
+  position:absolute;
+  top:25px;
+  right:25px;
+  cursor:pointer;
+}
+
+#tab {
+  text-align: center;
+
+  /*box-shadow: 0 4px 2px -2px black;
+  -o-box-shadow: 0 4px 2px -2px black;
+  -moz-box-shadow: 0 4px 2px -2px black;
+  -webkit-box-shadow: 0 4px 2px -2px black;*/
+}
+
+#tab button {
+  background-color: transparent;
+  display:inline-block;
+
+  border: none;
+  border-radius:25px;
+  outline: none;
+  cursor: pointer;
+
+  padding: 5px;
+  transition: 0.3s;
+
+  color:white;
+  font-family: Courier New, Courier, Lucida Sans Typewriter, Lucida   Typewriter, monospace;
+}
+
+#tab button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+#tab button.active {
+  background-color: rgba(255, 255, 255, 0.1);
+  font-weight:bold;
+}
+
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  animation: fadeEffect 0.5s;
+}
+
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
 }

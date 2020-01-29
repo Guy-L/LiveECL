@@ -7,6 +7,16 @@ body{
   height:80%;
 }
 
+#info{
+  margin: 10px 0;
+
+  padding-top:5px;
+  border-top: 3px dashed gray;
+
+  padding-bottom:5px;
+  border-bottom: 3px dashed gray;
+}
+
 #main{
   height: auto;
 }
@@ -19,14 +29,16 @@ body{
   flex-wrap: wrap;
 }
 
-#info{
-  margin: 10px 0;
+.CodeMirror {
+  width:100% !important;
+  height: 100vw !important;
+  resize: none !important;
+  font-size:0.9em;
+  background-size: 100% 33.6px !important;
+}
 
-  padding-top:5px;
-  border-top: 3px dashed gray;
-
-  padding-bottom:5px;
-  border-bottom: 3px dashed gray;
+.panelButton{
+  width: 5vw;
 }
 
 #up, #down{
@@ -38,5 +50,5 @@ body{
 }
 
 #terminal{
-  height:150px;
+  height:20vh;
 }
