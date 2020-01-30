@@ -167,7 +167,7 @@ function hideInfo(){
 }
 
 $(document).ready(function() {
-    var socket = io.connect('https://live-ecl.herokuapp.com/');
+    var socket = io.connect('https://live-ecl-hobby.herokuapp.com/');
     $(".default").click();
     updateMedia();
 
