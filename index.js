@@ -168,8 +168,11 @@ function hideInfo(){
 
 $(document).ready(function() {
     var socket = io.connect('https://live-ecl-hobby.herokuapp.com/');
+
     $(".default").click();
     updateMedia();
+
+    $("body").html($("body").html().replace('{VERSION}','1.4.7'));
 
     edit = CodeMirror.fromTextArea(document.getElementById("edit"), {
     	lineNumbers: true,

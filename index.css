@@ -1,3 +1,8 @@
+.version:after{
+  content: "1.4.7";
+  text-shadow: 2px 2px black;
+}
+
 body{
   background-image: url("assets/bg.png");
   background-repeat: repeat;
@@ -295,12 +300,6 @@ select{
   font-size: 65%;
 }
 
-.gameLog{
-  color: green;
-  font-weight: bold;
-  background-color: black;
-}
-
 .warning{
   color:orange;
 }
@@ -318,10 +317,17 @@ select{
   text-decoration:underline;
 }
 
-.compLog{
-  color: rgb(51, 153, 255);
+.gameLog, .compLog{
   font-weight: bold;
   background-color: black;
+}
+
+.gameLog{
+  color: green;
+}
+
+.compLog{
+  color: rgb(51, 153, 255);
 }
 
 .separator{
@@ -381,7 +387,6 @@ select{
   padding: 25px;
   border-radius:25px;
   z-index:50;
-  text-align:left;
 
   box-shadow: 0px 0px 5px rgba(0,0,0,0.8);
   -o-box-shadow: 0px 0px 5px rgba(0,0,0,0.8);
@@ -399,6 +404,13 @@ select{
   top:25px;
   right:25px;
   cursor:pointer;
+}
+
+h3, .center, #about img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center !important;
 }
 
 #tab {
@@ -439,6 +451,20 @@ select{
   display: none;
   padding: 6px 12px;
   animation: fadeEffect 0.5s;
+}
+
+.tabcontent p{
+  text-indent: 2%;
+  text-align:justify;
+}
+
+.tabcontent a{
+  background: -webkit-linear-gradient(#F29B00, #FEC900);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration: underline dashed #FEC900;
+  font-weight: bold;
+  cursor:pointer;
 }
 
 @keyframes fadeEffect {

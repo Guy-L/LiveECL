@@ -117,7 +117,7 @@ void main()
 				</div>
 			</div>
 
-			<div id="terminal"><br><b>LiveECL v1.4.7:</b> now with tooltips and a main menu!<br><b>Alt+S:</b> switches focus, &nbsp;&nbsp;&nbsp; <b>Alt+R:</b> restarts the game,<br><b>Alt+C:</b> clears all bullets, <b>Alt+F:</b> fullscreen.<br><i>... and much more!</i><br></div>
+			<div id="terminal"><br><b>LiveECL v<span class="version"></span>:</b> now with tooltips and a main menu!<br><b>Alt+S:</b> switches focus, &nbsp;&nbsp;&nbsp; <b>Alt+R:</b> restarts the game,<br><b>Alt+C:</b> clears all bullets, <b>Alt+F:</b> fullscreen.<br><i>... and much more!</i><br></div>
 		</div>
 		<input type="file" id="fileUpload" accept=".ecs, .txt, .tecl">
 		<div id="infoMenu">
@@ -132,7 +132,13 @@ void main()
 
 			<div id="about" class="tabcontent">
 				<h3>About</h3>
-				<p>About</p>
+				<p>LiveECL is an online interface to both a <span class="compLog">compiler</span> and an <span class="gameLog">interpreter</span> for the <b>E</b>nemy <b>C</b>ontrol <b>L</b>anguage, otherwise known as <b>ECL</b>. As the scripting language of the <a href="https://en.wikipedia.org/wiki/Touhou_Project">Touhou Project</a>, it is used to choreograph the enemies and patterns that appear in all Touhou Project games.</p>
+				<p>This project is made by and for the community, with the ultimate goal of being a <b>perfectly accurate</b> simulator for ECL scripts to aid making modding ("patching") more <b>accessible</b> and more <b>convenient</b>. One of the ultimate goals of the project will be the ability to play full Touhou Project stages in the browser, from any device.</p>
+				<p>LiveECL started in December of 2019 and is lead by Guy L. For any inquiries, bug-reporting or suggestions, you can reach me on Discord (@Guy#8081) or through email at <a href="mailto: g.guy.lab@gmail.com">g.guy.lab@gmail.com</a>.</p>
+				<p>LiveECL is still in active development - see the <a onclick="showTab(event, 'progress')">Progress</a> tab for more information. If you need any help, the <a onclick="showTab(event, 'features')">Features</a> and <a onclick="showTab(event, 'documentation')">Documentation</a> pages are for you.<br></p>
+				<p><i>Modders are still preparing, please wait warmly and have some tea.</i></p>
+				<p class="version center"><b>Current version: </b></p>
+				<img src="logo.png" align="middle">
 			</div>
 
 			<div id="features" class="tabcontent">
