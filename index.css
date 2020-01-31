@@ -343,6 +343,14 @@ select{
 [data-tip]:hover:after {
   content: attr(data-tip);
 
+  /*To fix a conflict for tags in the main menu*/
+  -webkit-text-fill-color: white;
+  text-indent: 0;
+
+  text-align:center;
+  font-size: 0.7em;
+  font-weight: normal;
+
   position: absolute;
   bottom:120%;
 
@@ -357,9 +365,6 @@ select{
   border: 2px solid black;
   border-radius:25px;
   z-index:40;
-
-  text-align:center;
-  font-size: 0.7em;
 
   filter:brightness(110%);
 
@@ -377,14 +382,14 @@ select{
   left: 50%;
   transform: translate(-50%, -50%);
 
-  width:80%;
-  height:80%;
+  width:80vw;
+  height:80vh;
 
   background-image: url("assets/bg.png");
   background-repeat: repeat;
 
   border: 2px solid black;
-  padding: 25px;
+  padding: 30px 30px 0 30px;
   border-radius:25px;
   z-index:50;
 
@@ -396,6 +401,7 @@ select{
   filter:none;
 
   display:none;
+  overflow:hidden;
 }
 
 #menuClose{
@@ -406,20 +412,11 @@ select{
   cursor:pointer;
 }
 
-h3, .center, #about img{
+h3, .center{
   display: block;
   margin-left: auto;
   margin-right: auto;
   text-align: center !important;
-}
-
-#tab {
-  text-align: center;
-
-  /*box-shadow: 0 4px 2px -2px black;
-  -o-box-shadow: 0 4px 2px -2px black;
-  -moz-box-shadow: 0 4px 2px -2px black;
-  -webkit-box-shadow: 0 4px 2px -2px black;*/
 }
 
 #tab button {
@@ -447,24 +444,74 @@ h3, .center, #about img{
   font-weight:bold;
 }
 
+.tabcontent:before{
+  content:"";
+  position:absolute;
+  left:0;
+  width: 100%;
+  height:0;
+  background-image: radial-gradient(ellipse at top, #230834, rgba(0,0,0,0));
+}
+
 .tabcontent {
   display: none;
   padding: 6px 12px;
   animation: fadeEffect 0.5s;
+  height: 95%;
+
+  overflow:auto;
+  scrollbar-width:none;
+  /*scrollbar-width: thin;
+  scrollbar-color: #FEC90040 #230834;*/
+}
+
+.tabcontent:after{
+  content:"";
+  position:absolute;
+  bottom:0;
+  left:0;
+  width: 100%;
+  height:0;
+  borer-radius: 0 0 25px 25px;
+  background-image: linear-gradient(rgba(0,0,0,0),#230834);
 }
 
 .tabcontent p{
-  text-indent: 2%;
+  text-indent: 25px;
   text-align:justify;
+  font-size: 2.5vh;
+}
+
+.tabcontent h3{
+  font-size:3vh;
 }
 
 .tabcontent a{
   background: -webkit-linear-gradient(#F29B00, #FEC900);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-decoration: underline dashed #FEC900;
+  text-decoration: underline dotted #FEC900;
   font-weight: bold;
   cursor:pointer;
+}
+
+.inline-icon{
+  display:inline-block;
+  width:2.5vh !important;
+  height:2.5vh;
+  vertical-align:middle;
+  border-radius:25px;
+  margin-left:0.75vh;
+}
+
+#handle{
+  background-color:#12001E;
+  border-radius:25px;
+  padding:2.5px 5px;
+  box-shadow: 0px 0px 5px black;
+  -o-box-shadow: 0px 0px 5px black;
+  -moz-box-shadow: 0px 0px 5px black;
+  -webkit-box-shadow: 0px 0px 5px black;
 }
 
 @keyframes fadeEffect {

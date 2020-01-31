@@ -152,6 +152,7 @@ function showInfo(event){
     if(menu.length){
         event.stopPropagation();
         menu.show();
+        $("default").scroll();
         $('#header, #info, #main').css("filter", "brightness(30%)");
         $('#header, #info, #main').on("click touchstart", hideInfo);
     }
@@ -359,8 +360,26 @@ function showTab(evt, tabName) {
   $(".tablinks").removeClass("active");
 
   $("#"+tabName).show();
+  $("#"+tabName).scroll();
   $(evt.target).addClass("active");
 }
+
+function tabScroll(evt){
+  tab = evt.target;
+  if (tab.offsetHeight < tab.scrollHeight) {
+      $("#pseudo-style").html(".tabcontent:before{height:"+Math.min(tab.scrollTop, 30)+"px;"
+                                                +"top:calc(30px + "+100*($("#tab").innerHeight() / $("#infoMenu").innerHeight())+"%);}"
+                             +".tabcontent:after{height:"+Math.min((tab.scrollHeight - tab.offsetHeight)-tab.scrollTop, 30)+"px;}");
+  } else {
+     $("#pseudo-style").html("");
+  }
+}
+
+function debugPercent(evt){
+   tab = evt.target;
+   if (missing > 0) printTerminal("scroll: " + tab.scrollTop/(tab.scrollHeight - tab.offsetHeight)*100);
+ }
+
 
 $(window).on("orientationchange", updateMedia);
 $(window).on("focus", updateMedia);
