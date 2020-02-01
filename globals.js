@@ -79,12 +79,13 @@ function fullscreen(){
 }
 
 function windowOpen(){
-    newWindow = window.open("game.html", "test", "width=384, height=448, location=no, menubar=no, toolbar=no, titlebar=no");
-    $("#game").hide();
-    $("#windowClose").show();
-    $(".CodeMirror").width("100vw");
-    $(".CodeMirror").css("resize","none");
-
+    if(newWindow == null || newWindow.closed) {
+        newWindow = window.open("game.html", "test", "width=384, height=448, location=no, menubar=no, toolbar=no, titlebar=no");
+        $("#game").hide();
+        $("#windowClose").show();
+        $(".CodeMirror").width("100vw");
+        $(".CodeMirror").css("resize","none");
+    }
 }
 
 function windowClose(){
