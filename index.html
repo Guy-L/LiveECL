@@ -17,15 +17,17 @@
 		<script src="libs/socket.io.js"></script>
 
 		<script src="index.js"></script>
+		<script src="globals.js"></script>
+		<style rel="stylesheet" type="text/css" id="pseudo-style"></style>
 	</head>
 
 	<body>
 		<div id="header">
-			<img src="assets/logo.png" alt="logo" onclick="showInfo(event);">
+			<img src="logo.png" alt="logo" onclick="showInfo(event);">
 		</div>
 
 		<div id="info">
-			<div id="button">Automatic</div>
+			<div class="autoButton">Automatic</div>
 			<select id="ver">
 				<option value="06"    disabled>6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Embodiment of Scarlet Devil</option>
 				<option value="07"    disabled>7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Perfect Cherry Blossom</option>
@@ -83,12 +85,12 @@ void main()
 }</textarea>
 					<table id="editPanel" style="left:15px">
 						<tr>
-							<th data-tip="New&nbsp;file. (Alt)&nbsp;N" class="panelButton" id="new" onclick="newFile();"><img src="assets/new.png" alt="N"></th>
-							<th data-tip="Toggle&nbsp;theme. (Alt)&nbsp;T" class="panelButton" id="theme" onclick="toggleTheme();"><img src="assets/night.png" alt="T"></th>
-							<th data-tip="Upload&nbsp;file. (Alt)&nbsp;U" class="panelButton" id="upload" onclick="upload();"><img src="assets/upload.png" alt="U"></th>
-							<th data-tip="Download&nbsp;file. (Alt)&nbsp;D" class="panelButton" id="download" onclick="downloadFn();"><a><img src="assets/download.png" alt="D"></a></th>
-							<th data-tip="Close&nbsp;window. (Alt)&nbsp;I" class="panelButton" id="windowClose" onclick="windowClose();"><img src="assets/internal.png" alt="I"></th>
-							<th class="panelButton" id="down" onclick="down();"><img src="assets/down.png" alt="↓"></th>
+							<td data-tip="New&nbsp;file. (Alt)&nbsp;N" class="panelButton" onclick="newFile();"><img src="assets/new.png" alt="N"></td>
+							<td data-tip="Toggle&nbsp;theme. (Alt)&nbsp;T" class="panelButton" onclick="toggleTheme();"><img src="assets/night.png" alt="T"></td>
+							<td data-tip="Upload&nbsp;file. (Alt)&nbsp;U" class="panelButton" onclick="upload();"><img src="assets/upload.png" alt="U"></td>
+							<td data-tip="Download&nbsp;file. (Alt)&nbsp;D" class="panelButton" id="download" onclick="downloadFn();"><a><img src="assets/download.png" alt="D"></a></td>
+							<td data-tip="Close&nbsp;window. (Alt)&nbsp;I" class="panelButton" id="windowClose" onclick="windowClose();"><img src="assets/internal.png" alt="I"></td>
+							<td class="panelButton" id="down" onclick="down();"><img src="assets/down.png" alt="↓"></td>
 						</tr>
 					</table>
 				</div>
@@ -96,30 +98,30 @@ void main()
 					<iframe id="gameWindow" src="game.html"></iframe>
 					<table id="gamePanel" style="right:15px">
 						<tr>
-							<th data-tip="Fullscreen&nbsp;mode. (Alt)&nbsp;F" class="panelButton" id="fullscreen" onclick="fullscreen();"><img src="assets/fullscreen.png" alt="F"></th>
-							<th data-tip="External&nbsp;window. (Alt)&nbsp;E" class="panelButton" id="windowOpen" onclick="windowOpen();"><img src="assets/external.png" alt="E"></th>
-							<th class="panelButton" id="up" onclick="up();"><img src="assets/up.png" alt="↑"></th>
+							<td data-tip="Fullscreen&nbsp;mode. (Alt)&nbsp;F" class="panelButton" onclick="fullscreen();"><img src="assets/fullscreen.png" alt="F"></td>
+							<td data-tip="External&nbsp;window. (Alt)&nbsp;E" class="panelButton" onclick="windowOpen();"><img src="assets/external.png" alt="E"></td>
+							<td class="panelButton" id="up" onclick="up();"><img src="assets/up.png" alt="↑"></td>
 						</tr>
 						<tr>
-							<th data-tip="Clears&nbsp;bullets. (Alt)&nbsp;C" class="panelButton" id="clear" onclick="clearBullets();"><img src="assets/clear.png" alt="C"></th>
-							<th data-tip="Restart&nbsp;game. (Alt)&nbsp;R" class="panelButton" id="restart" onclick="restart();"><img src="assets/restart.png" alt="R"></th>
+							<td data-tip="Clear&nbsp;bullets. (Alt)&nbsp;C" class="panelButton" onclick="clearBullets();"><img src="assets/clear.png" alt="C"></td>
+							<td data-tip="Restart&nbsp;game. (Alt)&nbsp;R" class="panelButton" onclick="restart();"><img src="assets/restart.png" alt="R"></td>
 						</tr>
 					</table>
 					<table id="charTable">
 						<tr>
-							<th><img data-value=0 src="assets/random.png" class="selected" ></th>
-							<th><img data-value=1 src="assets/reimu.png"></th>
-							<th><img data-value=2 src="assets/marisa.png"></th>
-							<th><img data-value=3 src="assets/sanae.png"></th>
-							<th><img data-value=4 src="assets/youmu2.png"></th>
+							<td><img data-value=0 src="assets/random.png" class="selected" ></td>
+							<td><img data-value=1 src="assets/reimu.png"></td>
+							<td><img data-value=2 src="assets/marisa.png"></td>
+							<td><img data-value=3 src="assets/sanae.png"></td>
+							<td><img data-value=4 src="assets/youmu2.png"></td>
 						</tr>
 					</table>
 				</div>
 			</div>
 
-			<div id="terminal"><br><b>LiveECL v1.4.7:</b> now with tooltips and a main menu!<br><b>Alt+S:</b> switches focus, &nbsp;&nbsp;&nbsp; <b>Alt+R:</b> restarts the game,<br><b>Alt+C:</b> clears all bullets, <b>Alt+F:</b> fullscreen.<br><i>... and much more!</i><br></div>
+			<div id="terminal"><br><b>LiveECL v<span class="version"></span>:</b> now with tooltips and a main menu!<br><b>Alt+S:</b> switches focus, &nbsp;&nbsp;&nbsp; <b>Alt+R:</b> restarts the game,<br><b>Alt+C:</b> clears all bullets, <b>Alt+F:</b> fullscreen.<br><i>... and much more!</i><br></div>
 		</div>
-		<input type="file" id="fileUpload" accept=".ecs, .txt, .tecl">
+
 		<div id="infoMenu">
 			<div id="tab">
 				<button class="tablinks default" onclick="showTab(event, 'about')">About</button>
@@ -130,37 +132,191 @@ void main()
 				<button class="tablinks" onclick="showTab(event, 'options')">Options</button>
 			</div>
 
-			<div id="about" class="tabcontent">
+			<div id="about" class="tabcontent" onscroll="tabScroll(event)" onresize="tabScroll(event)">
 				<h3>About</h3>
-				<p>About</p>
+				<p>LiveECL is an online interface to both a <span class="compLog">compiler</span> and an <span class="gameLog">interpreter</span> for the <b>E</b>nemy <b>C</b>ontrol <b>L</b>anguage, otherwise known as <b>ECL</b>. As the scripting language of the <a data-tip="Wikipedia:&nbsp;Touhou&nbsp;Project" href="https://en.wikipedia.org/wiki/Touhou_Project" target=”_blank”>Touhou Project</a>, it is used to choreograph the enemies and patterns that appear in all Touhou Project games.</p>
+				<p>This project is made by and for the community, with the ultimate goal of being a <b>perfectly accurate</b> simulator for ECL scripts to help making modding ("patching") more <b>accessible</b> and more <b>convenient</b>. One of the goals of the project is to enable users to play full Touhou Project stages in the browser, from any device.</p>
+				<p>LiveECL started in December of 2019 and is lead by Guy L. For any inquiries, bug-reporting or suggestions, you can reach me on <a data-tip="Discord:&nbsp;ZUNcode" href="https://discord.gg/fvPJvHJ" target=”_blank”>Discord</a> <span class="handle">@Guy#8081<img class="inline-icon" src="assets/guy.png" style="border-radius:25px;"></span> or through email at <a data-tip="Send&nbsp;an&nbsp;email!" href="mailto: g.guy.lab@gmail.com">g.guy.lab@gmail.com</a>.</p>
+				<p>LiveECL is still in active development - see the <a onclick="$('#tab button')[2].click()">Progress</a> tab for more information.<br>If you need any help, the <a onclick="$('#tab button')[1].click()">Features</a> and <a onclick="$('#tab button')[3].click()">Documentation</a> pages are for you.<br></p>
+				<p><i>Modders are still preparing, please wait warmly and have some tea.</i></p>
+				<p class="version center"><b>Current version: </b></p>
+				<img src="logo.png" id="center" style="width:30%;">
+				<br><br>
 			</div>
 
-			<div id="features" class="tabcontent">
+			<div id="features" class="tabcontent" onscroll="tabScroll(event)" onresize="tabScroll(event)">
 				<h3>Features</h3>
-				<p>Features</p>
+
+				<h4>Overview</h4>
+				<p>The basic concept of LiveECL is to allow you to automatically (or manually) compile and run any ECL script you write in the editor. To fully utilize this tool, you must have some understanding of both ECL and of the Touhou series of games. Information and help regarding ECL can be found in <a onclick="$('#tab button')[3].click()">Documentation</a>.</p>
+				<p>Tooltips are there to help you, so do point your cursor if <span data-tip="Well&nbsp;played.">something</span> piques your interest!</p>
+				<h5>Game</h5>
+				<img class="right" src="assets/screenshot.png">
+				<p>The game (or <i>"Interpreter"</i>) is meant to be an accurate simulation of Touhou gameplay.<br>For the most part, shoot, dodge, and don't die. <a data-tip="Touhou&nbsp;Wiki: Getting&nbsp;Started" href="https://en.touhouwiki.net/wiki/Getting_Started" target=”_blank”>More here.</a><br>As usual, the controls are:</p>
+				<ul>
+					<li><div class="key">🠘</div><div class="key">🠙</div><div class="key">🠚</div><div class="key">🠛</div>, <div class="key"><img class="inline-icon" src="assets/mouse.png"></div> or <div class="key"><img class="inline-icon" src="assets/touch.png"></div> to move around,
+						<ul>
+							<li>Touch controls set a <i>goal</i> for your character to move towards.</li>
+							<li>You can customize this behavior in <a onclick="$('#tab button')[5].click()">Options</a>.</li>
+						</ul>
+					</li>
+					<li><div class="key">Z</div> to shoot,</li>
+					<li><div class="key">⇪ Shift</div> to <i>focus,</i>
+						<ul>
+							<li>Slows down your character.</li>
+							<li>Makes your hitbox visible.</li>
+						</ul>
+					</li>
+					<li><i>More to come later.</i></li>
+				</ul>
+				<p>Information about more advanced features of the interpreter will appear here once they have been implemented. You are free to chose to play as any character, with any difficulty, in any game. A <i>godmode</i> option is provided for patterns better suited for viewing than playing. <i><span class="tiny">May or may not contain easter eggs.</span></i></p>
+
+				<h5>Editor</h5>
+				<p>You write, it compiles.</p>
+				<div align="left"><p style="display:inline; padding-left: 25px;">Alternatively, you can change compilation to manual mode by using this button: </p><div class="autoButton">Automatic</div></div>
+				<p style="margin:0; padding:0; text-indent: 0;">Additional options are given for veterans, such as the use of older ECLmaps and the simple compile mode.</p>
+				<p style="margin:0; padding:0; text-indent: 0;">You can also set which sub the game should attempt to run first (this defaults to <b>main</b>).</p>
+				<p>Even more editor features are accessible through the functionalities below, and more are planned.</p>
+				<br><br><br>
+
+				<h4>Functionalities</h4>
+				<p>Easy-access buttons are provided for various useful features, along with keyboard shortcuts.<br>Do note that the <span class="key">Alt</span> key should only be pressed when the game is not in focus.</p>
+
+				<h5>Game</h5>
+				<table>
+					<tr>
+						<th>Button</th>
+						<th>Shortcut</th>
+						<th>Name</th>
+						<th>Description</th>
+					</tr>
+					<tr>
+						<td data-tip="Fullscreen&nbsp;mode. (Alt)&nbsp;F" class="panelButton" onclick="fullscreen();"><img src="assets/fullscreen.png" alt="F"></td>
+						<td>(<div class="key">Alt</div>)&nbsp;+&nbsp;<div class="key">F</div></td>
+						<td>Fullscreen</td>
+						<td>Attempts to open the game view in fullscreen mode.<br>May not work in popup mode.</td>
+					</tr>
+					<tr>
+						<td data-tip="External&nbsp;window. (Alt)&nbsp;E" class="panelButton" onclick="windowOpen();"><img src="assets/external.png" alt="E"></td>
+						<td>(<div class="key">Alt</div>)&nbsp;+&nbsp;<div class="key">E</div></td>
+						<td>External window<br><span class="tiny"><i>(Popup Mode)</i></span></td>
+						<td>Attempts to move the game to a new window.<br>
+							<span class="warning">Will create a new instance of the game.</span><br>
+							<span class="error">Shortcut disabled due to popup-detection risk. See <a onclick="$('#tab button')[5].click()">Options</a>.</span></td>
+					</tr>
+					<tr>
+						<td data-tip="Close&nbsp;window. (Alt)&nbsp;I" class="panelButton" onclick="windowClose();"><img src="assets/internal.png" alt="I"></td>
+						<td>(<div class="key">Alt</div>)&nbsp;+&nbsp;<div class="key">I</div></td>
+						<td>Internal window</td>
+						<td>Closes the popup window.<br>Only appears while popup window is open.</td>
+					</tr>
+					<tr>
+						<td data-tip="Clear&nbsp;bullets. (Alt)&nbsp;C" class="panelButton" onclick="clearBullets();"><img src="assets/clear.png" alt="C"></td>
+						<td>(<div class="key">Alt</div>)&nbsp;+&nbsp;<div class="key">C</div></td>
+						<td>Clear bullets</td>
+						<td>Instantly destroys all enemy bullets.</td>
+					</tr>
+					<tr>
+						<td data-tip="Restart&nbsp;game. (Alt)&nbsp;R" class="panelButton" id="restart" onclick="restart();"><img src="assets/restart.png" alt="R"></td>
+						<td>(<div class="key">Alt</div>)&nbsp;+&nbsp;<div class="key">R</div></td>
+						<td>Restart game</td>
+						<td>Reloads the game.<br>If an unreported crash occurs, please report it!</td>
+					</tr>
+				</table>
+
+				<h5>Editor</h5>
+				<table>
+					<tr>
+						<th>Button</th>
+						<th>Shortcut</th>
+						<th>Name</th>
+						<th>Description</th>
+					</tr>
+					<tr>
+						<td data-tip="New&nbsp;file. (Alt)&nbsp;N" class="panelButton" onclick="newFile();"><img src="assets/new.png" alt="N"></td>
+						<td>(<div class="key">Alt</div>)&nbsp;+&nbsp;<div class="key">N</div></td>
+						<td>New file</td>
+						<td>Clears the editor field, or resets it to default if empty.<br>
+							<span class="warning">Currently does not ask for confirmation.</span><td>
+					</tr>
+					<tr>
+						<td data-tip="Toggle&nbsp;theme. (Alt)&nbsp;T" class="panelButton" onclick="toggleTheme();"><img src="assets/night.png" alt="T"></td>
+						<td>(<div class="key">Alt</div>)&nbsp;+&nbsp;<div class="key">T</div></td>
+						<td>Toggle theme</td>
+						<td>Toggles between light mode and dark mode.<td>
+					</tr>
+					<tr>
+						<td data-tip="Upload&nbsp;file. (Alt)&nbsp;U" class="panelButton" onclick="upload();"><img src="assets/upload.png" alt="U"></td>
+						<td>(<div class="key">Alt</div>)&nbsp;+&nbsp;<div class="key">U</div></td>
+						<td>Upload file</td>
+						<td>Prompts for a file to be loaded in the editor.<td>
+					</tr>
+					<tr>
+						<td data-tip="Download&nbsp;file. (Alt)&nbsp;D" class="panelButton" onclick="download();"><a><img src="assets/download.png" alt="D"></a></td>
+						<td>(<div class="key">Alt</div>)&nbsp;+&nbsp;<div class="key">D</div></td>
+						<td>Download file</td>
+						<td>Prompts to download editor content in <span class="handle">.ecs</span> format.<td>
+					</tr>
+				</table>
+
+				<h5>General</h5>
+				<table>
+					<tr>
+						<th>Button</th>
+						<th>Shortcut</th>
+						<th>Name</th>
+						<th>Description</th>
+					</tr>
+					<tr>
+						<td class="panelButton" onclick="down();"><img src="assets/down.png" alt="↓"></td>
+						<td>N/A</td>
+						<td>Down</td>
+						<td>Scrolls to bottom of page.<br>
+							<span class="warning"><b>Mobile only.</b></span></td>
+					</tr>
+					<tr>
+						<td class="panelButton" onclick="up();"><img src="assets/up.png" alt="↑"></td>
+						<td>N/A</td>
+						<td>Up</td>
+						<td>Scrolls to top of page.<br>
+							<span class="warning"><b>Mobile only.</b></span></td>
+					</tr>
+					<tr>
+						<td class="panelButton" onclick="switchFocus();"><img src="assets/switch.png" alt="S"></td>
+						<td>(<div class="key">Alt</div>)&nbsp;+&nbsp;<div class="key">S</div></td>
+						<td>Switch focus</td>
+						<td>Switches focus from game to editor, or from editor to game.<br>
+							<span class="warning"><b>Shortcut only.</b></span></td>
+					</tr>
+				</table>
+
+				<h4>More</h4>
+				<p>LiveECL is constantly updated with new features: see <a onclick="$('#tab button')[2].click()">Progress</a> for upcoming changes! Additional features are also available in the <a onclick="$('#tab button')[5].click()">Options</a> page. For more technical information as to how LiveECL came to be and currently works behind the scenes, see <a data-tip="Work&nbsp;in&nbsp;progress!">this</a> page.</p>
 			</div>
 
-			<div id="progress" class="tabcontent">
+			<div id="progress" class="tabcontent" onscroll="tabScroll(event)" onresize="tabScroll(event)">
 				<h3>Progress</h3>
 				<p>Progress</p>
 			</div>
 
-			<div id="documentation" class="tabcontent">
+			<div id="documentation" class="tabcontent" onscroll="tabScroll(event)" onresize="tabScroll(event)">
 				<h3>Documentation</h3>
 				<p>Documentation</p>
 			</div>
 
-			<div id="database" class="tabcontent">
+			<div id="database" class="tabcontent" onscroll="tabScroll(event)" onresize="tabScroll(event)">
 				<h3>Database</h3>
 				<p>Database</p>
 			</div>
 
-			<div id="options" class="tabcontent">
+			<div id="options" class="tabcontent" onscroll="tabScroll(event)" onresize="tabScroll(event)">
 				<h3>Options</h3>
 				<p>Options</p>
 			</div>
 
 			<img src="assets/close.png" id="menuClose" onclick="hideInfo();" alt="Close">
 		</div>
+
+		<input type="file" id="fileUpload" accept=".ecs, .txt, .tecl">
 	</body>
 </html>

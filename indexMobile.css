@@ -1,5 +1,5 @@
 body{
-  overflow: scroll;
+  overflow: hidden scroll;
 }
 
 #header img{
@@ -51,4 +51,16 @@ body{
 
 #terminal{
   height:20vh;
+}
+
+.tabcontent p{
+  text-align:left;
+}
+
+.tabcontent table td:nth-child(2), .tabcontent table th:nth-child(2){
+  display:none;
+}
+
+.right{
+  display:none;
 }
