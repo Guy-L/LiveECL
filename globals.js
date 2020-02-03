@@ -93,7 +93,7 @@ function godmode(){
 }
 
 function windowOpen(){
-    if(newWindow == null || newWindow.closed) {
+    if(newWindow == null || newWindow.closed || !(/Mobi|Android/i.test(navigator.userAgent))) {
         newWindow = window.open("game.html", "test", "width=384, height=448, location=no, menubar=no, toolbar=no, titlebar=no");
         $("#game").hide();
         $("#windowClose").show();
@@ -203,4 +203,12 @@ function tabScroll(evt){
 function debugPercent(evt){
    tab = evt.target;
    if (missing > 0) printTerminal("scroll: " + tab.scrollTop/(tab.scrollHeight - tab.offsetHeight)*100);
+}
+
+
+////////////////// TERMINAL FUNCTIONS
+
+function gotoLine(line, char){
+    edit.setCursor(line, char);
+    edit.focus();
 }

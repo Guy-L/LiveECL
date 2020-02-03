@@ -583,7 +583,7 @@ select{
   padding:0px;
 }
 
-.tabcontent a{
+.tabcontent a, #terminal a{
   background: -webkit-linear-gradient(#F29B00, #FEC900);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

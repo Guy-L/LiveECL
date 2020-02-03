@@ -99,7 +99,7 @@ void main()
 					<table id="gamePanel" style="right:15px">
 						<tr>
 							<td data-tip="Fullscreen&nbsp;mode. (Alt)&nbsp;F" class="panelButton" onclick="fullscreen();"><img src="assets/fullscreen.png" alt="F"></td>
-							<td data-tip="External&nbsp;window. (Alt)&nbsp;E" class="panelButton" onclick="windowOpen();"><img src="assets/external.png" alt="E"></td>
+							<td data-tip="External&nbsp;window. (Alt)&nbsp;E" class="panelButton" id="windowOpen" onclick="windowOpen();"><img src="assets/external.png" alt="E"></td>
 							<td class="panelButton" id="up" onclick="up();"><img src="assets/up.png" alt="↑"></td>
 						</tr>
 						<tr>
@@ -120,7 +120,7 @@ void main()
 				</div>
 			</div>
 
-			<div id="terminal"><br><b>LiveECL v<span class="version"></span>:</b> now with godmode!<br><b>Alt+S:</b> switches focus, &nbsp;&nbsp;&nbsp; <b>Alt+R:</b> restarts the game,<br><b>Alt+C:</b> clears all bullets, <b>Alt+F:</b> fullscreen.<br><i>... and much more!</i><br></div>
+			<div id="terminal"><br><b>LiveECL v<span class="version"></span>:</b> now with clickable line numbers!<br><b>Alt+S:</b> switches focus, &nbsp;&nbsp;&nbsp; <b>Alt+R:</b> restarts the game,<br><b>Alt+C:</b> clears all bullets, <b>Alt+F:</b> fullscreen.<br><i>... and much more!</i><br></div>
 		</div>
 
 		<div id="infoMenu">
@@ -304,7 +304,54 @@ void main()
 
 			<div id="progress" class="tabcontent" onscroll="tabScroll(event)" onresize="tabScroll(event)">
 				<h3>Progress</h3>
-				<p>Nothing here yet!</p>
+
+				<h4>Goals</h4>
+				<p>LiveECL is still in active development as it becomes it more accessible, more convenient, and—importantly—more accurate, update after update.</p>
+				<p>In no particular order, here are some of the main long-term goals we're shooting towards:</p>
+
+				<ul>
+					<li>Complete support for every ECL-based Touhou game.
+						<ul>
+							<li>Full ECL instruction support,</li>
+							<li>Integration of all game assets <i>(sprites, music, etc.)</i>,</li>
+							<li>All characters and shot types, </li>
+							<li>Game-specific gameplay "gimmicks", </li>
+							<li>Accurate ECL helper libraries (<a data-tip="GitHub:&nbsp;MERLIN" href="https://github.com/Priw8/merlin">MERLIN</a>).</li>
+							<li><b>All the original ECL files of any given game should work in LiveECL!</b><br></li>
+						</ul>
+					</li>
+					<li>ECL Database.
+						<ul>
+							<li>Ability to quickly share ECL scripts,</li>
+							<li>Feedback for uploaders <i>(plays, likes and saved)</i>,</li>
+							<li>Ability to easily find unplayed and popular/recent scripts,</li>
+							<li>Browsing by uploader name <span class="tiny">(may require account-creation to ensure authenticity?)</span><br>.</li>
+						</ul>
+					</li>
+					<li>A fast, convenient editor.
+						<ul>
+							<li><b>Code completion</b>, including instruction names and MERLIN constants,</li>
+							<li>Better auto-indent and color coding,</li>
+							<li>Ability to open and work on multiple files at once.<br></li>
+						</ul>
+					</li>
+					<li>Group editing and playing ("<i>rooms</i>" system).</li>
+				</ul>
+
+				<br>
+				<p>Here are some of the main features we're working on right now:</p>
+
+				<ul>
+					<li>Finishing this page!</li>
+				</ul>
+
+				<br><br>
+				<h4>ECL Support</h4>
+				<p>Work in progress.</p>
+
+				<br><br>
+				<h4>Progress Tracker & Suggestions</h4>
+				<p>Work in progress.</p>
 			</div>
 
 			<div id="documentation" class="tabcontent" onscroll="tabScroll(event)" onresize="tabScroll(event)">
