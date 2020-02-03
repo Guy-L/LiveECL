@@ -78,6 +78,20 @@ function fullscreen(){
     }
 }
 
+function godmode(){
+    var god = $(".godmode");
+
+    if(god.length){
+        if(god.hasClass("active")){
+            god.removeClass("active");
+            god.attr("src","assets/godoff.png");
+        } else {
+            god.addClass("active");
+            god.attr("src","assets/godon.png");
+        }
+    }
+}
+
 function windowOpen(){
     if(newWindow == null || newWindow.closed) {
         newWindow = window.open("game.html", "test", "width=384, height=448, location=no, menubar=no, toolbar=no, titlebar=no");

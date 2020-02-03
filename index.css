@@ -193,11 +193,25 @@ select{
   padding: 2px;
   margin: -2px;
   border-radius:5px;
-  background-color:none;
+  background-color:transparent;
 }
 
 #charTable img.selected{
   background-color:gray;
+}
+
+.godmode{
+  width:16px;
+  margin-right:5px !important;
+}
+
+.godmode.active{
+  animation:rotate 1s infinite linear;
+}
+
+@-webkit-keyframes rotate {
+    from { -webkit-transform: rotate(0deg) }
+    to { -webkit-transform: rotate(360deg) }
 }
 
 #main{

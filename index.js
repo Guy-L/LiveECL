@@ -52,6 +52,11 @@ $(document).ready(function() {
                     fullscreen();
                     break;
 
+                case 71: //F
+                    e.preventDefault();
+                    godmode();
+                    break;
+
                 case 73: //I
                     e.preventDefault();
                     windowClose();
@@ -107,11 +112,11 @@ $(document).ready(function() {
     });
 
     $("#charTable img").click(function(event){
-        if($(this).attr("data-value") != 4){
+        if($(this).attr("data-value") && $(this).attr("data-value") != 4){
             $(".selected").removeClass("selected");
             $(this).addClass("selected");
         }
-    })
+    });
 
     socket.on('connect', function(){
         var button = $('.autoButton');
