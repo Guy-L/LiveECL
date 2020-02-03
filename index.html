@@ -99,7 +99,7 @@ void main()
 					<table id="gamePanel" style="right:15px">
 						<tr>
 							<td data-tip="Fullscreen&nbsp;mode. (Alt)&nbsp;F" class="panelButton" onclick="fullscreen();"><img src="assets/fullscreen.png" alt="F"></td>
-							<td data-tip="External&nbsp;window. (Alt)&nbsp;E" class="panelButton" onclick="windowOpen();"><img src="assets/external.png" alt="E"></td>
+							<td data-tip="External&nbsp;window. (Alt)&nbsp;E" class="panelButton" id="windowOpen" onclick="windowOpen();"><img src="assets/external.png" alt="E"></td>
 							<td class="panelButton" id="up" onclick="up();"><img src="assets/up.png" alt="↑"></td>
 						</tr>
 						<tr>
@@ -120,7 +120,7 @@ void main()
 				</div>
 			</div>
 
-			<div id="terminal"><br><b>LiveECL v<span class="version"></span>:</b> now with godmode!<br><b>Alt+S:</b> switches focus, &nbsp;&nbsp;&nbsp; <b>Alt+R:</b> restarts the game,<br><b>Alt+C:</b> clears all bullets, <b>Alt+F:</b> fullscreen.<br><i>... and much more!</i><br></div>
+			<div id="terminal"><br><b>LiveECL v<span class="version"></span>:</b> now with clickable line numbers!<br><b>Alt+S:</b> switches focus, &nbsp;&nbsp;&nbsp; <b>Alt+R:</b> restarts the game,<br><b>Alt+C:</b> clears all bullets, <b>Alt+F:</b> fullscreen.<br><i>... and much more!</i><br></div>
 		</div>
 
 		<div id="infoMenu">
@@ -177,7 +177,7 @@ void main()
 				<div align="left"><p style="display:inline; padding-left: 25px;">Alternatively, you can change compilation to manual mode by using this button: </p><div class="autoButton">Automatic</div></div>
 				<p style="margin:0; padding:0; text-indent: 0;">Additional options are given for veterans, such as the use of older ECLmaps and the simple compile mode.</p>
 				<p style="margin:0; padding:0; text-indent: 0;">You can also set which sub the game should attempt to run first (this defaults to <b>main</b>).</p>
-				<p>Do note that the LiveECL editor comes pre-packaged with the <a data-tip="GitHub:&nbsp;MERLIN" href="https://github.com/Priw8/merlin">MERLIN</a> library. Whether or not to use it is up to you. Errors and other debugging information is delivered through the terminal at the bottom. You can use the resize icon in the middle of the page to display (or hide) the three main components as needed.</p>
+				<p>Do note that the LiveECL editor comes pre-packaged with the <a data-tip="GitHub:&nbsp;MERLIN" href="https://github.com/Priw8/merlin" target=”_blank”>MERLIN</a> library. Whether or not to use it is up to you. Errors and other debugging information is delivered through the terminal at the bottom. You can use the resize icon in the middle of the page to display (or hide) the three main components as needed.</p>
 				<p>Even more editor features are accessible through the functionalities below, and more are planned.</p>
 				<br><br><br>
 
@@ -316,7 +316,7 @@ void main()
 							<li>Integration of all game assets <i>(sprites, music, etc.)</i>,</li>
 							<li>All characters and shot types, </li>
 							<li>Game-specific gameplay "gimmicks", </li>
-							<li>Accurate ECL helper libraries (<a data-tip="GitHub:&nbsp;MERLIN" href="https://github.com/Priw8/merlin">MERLIN</a>).</li>
+							<li>Accurate ECL helper libraries (<a data-tip="GitHub:&nbsp;MERLIN" href="https://github.com/Priw8/merlin" target=”_blank”>MERLIN</a>).</li>
 							<li><b>All the original ECL files of any given game should work in LiveECL!</b><br></li>
 						</ul>
 					</li>
