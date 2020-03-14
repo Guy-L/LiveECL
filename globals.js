@@ -205,6 +205,19 @@ function debugPercent(evt){
    if (missing > 0) printTerminal("scroll: " + tab.scrollTop/(tab.scrollHeight - tab.offsetHeight)*100);
 }
 
+function retract(evt){
+	content = $($(evt.target).siblings(".retract"));
+	content.toggle();
+	
+	if(content.is(":visible")){
+		$(evt.target).html("Click to see less!<br>"
+						  +"<img src=\"assets/up.png\">")
+	} else {
+		$(evt.target).html("Click to see more!<br>"
+						  +"<img src=\"assets/down.png\">")
+	}
+}
+
 
 ////////////////// TERMINAL FUNCTIONS
 

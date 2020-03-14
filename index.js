@@ -12,8 +12,6 @@ $(document).ready(function() {
     $(".default").click();
     updateMedia();
 
-    $("body").html($("body").html().replace('{VERSION}','1.4.7'));
-
     if (localStorage.getItem("script") != null) {
      $("#edit").val(localStorage.getItem("script"));
     }

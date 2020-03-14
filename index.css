@@ -629,11 +629,11 @@ select{
   font-size: 2.5vh;
 }
 
-.tabcontent table tr:nth-child(2n){
+#features.tabcontent table tr:nth-child(2n){
   background-color:#1C003180;
 }
 
-.tabcontent table td:first-child {
+#features.tabcontent table td:first-child {
   width:40px;
   display:inline-block;
   padding: 4px;
@@ -665,6 +665,62 @@ select{
 .key img{
   display:inline-block;
   margin: 0 0;
+}
+
+div.retractbox{
+	border:5px solid #1C0031;
+	border-radius:10px;
+	margin: 15px auto;
+	display: block;
+	width:80%;
+}
+
+p.retracttitle{
+	background-color:#1C0031;
+	padding:5px 5px;
+	margin:0;
+	text-align:center;
+	font-weight:bold;
+}
+
+div.retract{
+	display:none;
+	background-image: linear-gradient(#1C0031, #2F173F);
+	margin:0;
+	border:0.1px solid #1C0031;
+}
+
+div.retract table{
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+div.retract td{
+	width: 25%
+	vertical-align:top;
+}	
+
+div.retract td:nth-child(2n){
+  background-color:#1C003140;
+}
+
+div.retracthint{
+	padding:10px;
+	text-align:center;
+	background-image: linear-gradient(#2F173F, #1C0031);
+	font-size: 0.7em;
+	cursor:pointer;
+	
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+div.retracthint img{
+	width:20px;
+	margin:2px;
 }
 
 @keyframes fadeEffect {
