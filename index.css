@@ -15,7 +15,7 @@ body{
   min-width:320px;
 }
 
-iframe{
+#game iframe{
   height:100%;
   width:100%;
   border:1px solid black;
@@ -695,6 +695,16 @@ div.retract table{
 	border: 0;
 	margin: 0;
 	padding: 0;
+}
+
+div.retract #transformTable li{
+	font-size: 1em;
+}
+
+div.retract iframe{
+  height:1000px;
+  width:100%;
+  border: none;
 }
 
 div.retract td{

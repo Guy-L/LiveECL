@@ -15,6 +15,20 @@ $(document).ready(function() {
     if (localStorage.getItem("script") != null) {
      $("#edit").val(localStorage.getItem("script"));
     }
+	
+	//Calculates the percent of interpreted instructions for a category.
+	//Used in the Progress section of the menu.
+	$('.toCalcRetract').each(function(i, obj) {
+		var txt = $(this).text(); //Following 2 variables assignments are for readability.
+		var range = parseInt(txt.substring(txt.indexOf("-")+1, txt.indexOf(" "))) - parseInt(txt.substring(0, txt.indexOf("-"))) + 1;
+		var count = $($(this).siblings(".retract")).find("table:not(#transformTable) li").length;
+		var percent = (count/range * 100).toFixed(2);
+		
+		if(percent > 75){ $(this).append(" <span class=\"gameLog\">[" + percent + "%]</span>"); }
+		else if(percent > 50){ $(this).append(" <span class=\"no-error\">[" + percent + "%]</span>"); }
+		else if(percent > 25){ $(this).append(" <span class=\"warning\">[" + percent + "%]</span>"); }
+		else{ $(this).append(" <span class=\"error\">[" + percent + "%]</span>"); }
+	});
 
     edit = CodeMirror.fromTextArea(document.getElementById("edit"), {
     	lineNumbers: true,

@@ -211,10 +211,25 @@ function retract(evt){
 	
 	if(content.is(":visible")){
 		$(evt.target).html("Click to see less!<br>"
-						  +"<img src=\"assets/up.png\">")
+						  +"<img src=\"assets/up.png\">");
 	} else {
 		$(evt.target).html("Click to see more!<br>"
-						  +"<img src=\"assets/down.png\">")
+						  +"<img src=\"assets/down.png\">");
+	}
+}
+
+function retractDocs(evt){
+	content = $($(evt.target).siblings(".retract"));
+	content.toggle();
+	
+	if(content.is(":visible")){
+		$(evt.target).html("Click to see less!<br>"
+						  +"<img src=\"assets/up.png\">");
+		content.find("iframe").attr("src", content.find("iframe").data("src"));
+	} else {
+		$(evt.target).html("Click to see more!<br>"
+						  +"<img src=\"assets/down.png\">");
+		content.find("iframe").data("src", content.find("iframe").attr("src"));
 	}
 }
 

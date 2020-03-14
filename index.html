@@ -342,7 +342,8 @@ void main()
 				<p>Here are some of the main features we're working on right now:</p>
 
 				<ul>
-					<li>Finishing this page!</li>
+					<li>Finishing this menu,</li>
+					<li>Enemy instructions.</li>
 				</ul>
 
 				<br><br>
@@ -352,7 +353,7 @@ void main()
 				<br>Here is the full list:</p>
 				
 				<div class="retractbox">
-					<p class="retracttitle">0-93 (System)</p>
+					<p class="retracttitle toCalcRetract">0-93 (System)</p>
 					<div class="retract">
 						<table><tr>
 							<td><ul>
@@ -363,91 +364,12 @@ void main()
 								<li>jmp</li>
 								<li>jmpEq</li>
 								<li>jmpNeq</li>
-								<li>callAsync</li>
-								<li>callAsyncId</li>
-								<li>killAsync</li>
-								<li>killAllAsync</li>
-								<li>wait</li>
-								<li>waitf (TOCHECK)</li>
-								<li>stackAlloc</li>
-							</ul></td>
-							<td><ul>
-								<li>pushi</li>
-								<li>seti</li>
-								<li>pushf</li>
-								<li>setf</li>
-								<li>addi</li>
-								<li>addf</li>
-								<li>subi</li>
-								<li>subf</li>
-								<li>muli</li>
-								<li>mulf</li>
-								<li>divi</li>
-								<li>divf</li>
-								<li>modi</li>
-								<li>eqi</li>
-								<li>eqf</li>
-							</ul></td>
-							<td><ul>
-								<li>neqi</li>
-								<li>neqf</li>
-								<li>lessi</li>
-								<li>lessf</li>
-								<li>leqi</li>
-								<li>leqf</li>
-								<li>greateri</li>
-								<li>greaterf</li>
-								<li>geqi</li>
-								<li>geqf</li>
-								<li>noti</li>
-								<li>notf</li>
-								<li>or</li>
-								<li>and</li>
-								<li>xor (TOCHECK)</li>
-							</ul></td>
-							<td><ul>
-								<li>bit_or (TOCHECK)</li>
-								<li>bit_and (TOCHECK)</li>
-								<li>deci</li>
-								<li>stackSin </li>
-								<li>stackCos</li>
-								<li>mathCirclePos</li>
-								<li>validRad</li>
-								<li>negi</li>
-								<li>negf</li>
-								<li>squareSum</li>
-								<li>squareSumRoot</li>
-								<li>mathAngle</li>
-								<li>stackSqrt</li>
-								<li>linearFunc</li>
-								<li>pointRotate</li>
-							</ul></td>	
-						</tr></table>
-					</div>
-					<div class="retracthint" onclick="retract(event);">
-						Click to see more!<br>
-						<img src="assets/down.png">
-					</div>
-				</div>
-				
-				<div class="retractbox">
-					<p class="retracttitle">0-93 (System)</p>
-					<div class="retract">
-						<table><tr>
-							<td><ul>
-								<li>nop</li>
-								<li>delete</li>
-								<li>ret</li>
-								<li>call</li>
-								<li>jmp</li>
-								<li>jmpEq</li>
-								<li>jmpNeq</li>
-								<li>callAsync</li>
-								<li>callAsyncId</li>
-								<li>killAsync</li>
-								<li>killAllAsync</li>
-								<li>wait</li>
-								<li>waitf</li>
+								<li class="error" data-tip="Needs&nbsp;further&nbsp;testing.">callAsync</li>
+								<li class="error" data-tip="Needs&nbsp;further&nbsp;testing.">callAsyncId</li>
+								<li class="error" data-tip="Needs&nbsp;further&nbsp;testing.">killAsync</li>
+								<li class="error" data-tip="Needs&nbsp;further&nbsp;testing.">killAllAsync</li>
+								<li class="error" data-tip="Needs&nbsp;further&nbsp;testing.">wait</li>
+								<li class="error" data-tip="Needs&nbsp;further&nbsp;testing.">waitf</li>
 								<li>stackAlloc</li>
 							</ul></td>
 							<td><ul>
@@ -510,7 +432,7 @@ void main()
 				</div>
 				
 				<div class="retractbox">
-					<p class="retracttitle">500-562 (Misc)</p>
+					<p class="retracttitle toCalcRetract">500-562 (Misc)</p>
 					<div class="retract">
 						<table><tr>
 							<td><ul>
@@ -528,13 +450,13 @@ void main()
 				</div>
 				
 				<div class="retractbox">
-					<p class="retracttitle">600-640 (Bullets)</p>
+					<p class="retracttitle toCalcRetract">600-640 (Bullets)</p>
 					<div class="retract">
 						<table><tr>
 							<td><ul>
 								<li>etNew</li>
-								<li>etOn</li>
-								<li>etSprite</li>
+								<li class="warning" data-tip="Not&nbsp;fully&nbsp;implemented.">etOn</li>
+								<li class="warning" data-tip="Not&nbsp;fully&nbsp;implemented.">etSprite</li>
 								<li>etOffset</li>
 								<li>etAngle</li>
 							</ul></td>
@@ -542,23 +464,54 @@ void main()
 								<li>etSpeed</li>
 								<li>etCount</li>
 								<li>etAim</li>
-								<li>etSound</li>
-								<li>etExSet</li>
+								<li class="warning" data-tip="Not&nbsp;fully&nbsp;implemented.">etSound</li>
+								<li class="warning" data-tip="Not&nbsp;fully&nbsp;implemented.">etExSet</li>
 							</ul></td>
 							<td><ul>
-								<li>etExSet2</li>
-								<li>etEx</li>
-								<li>etEx2</li>
-								<li>etClearAll</li>
+								<li class="warning" data-tip="Not&nbsp;fully&nbsp;implemented.">etExSet2</li>
+								<li class="warning" data-tip="Not&nbsp;fully&nbsp;implemented.">etEx</li>
+								<li class="warning" data-tip="Not&nbsp;fully&nbsp;implemented.">etEx2</li>
+								<li class="error" data-tip="Needs&nbsp;further&nbsp;testing.">etClearAll</li>
 								<li>etCopy</li>
 							</ul></td>
 							<td><ul>
-								<li>angleToPlayer</li>
+								<li class="error" data-tip="Needs&nbsp;further&nbsp;testing.">angleToPlayer</li>
 								<li>etSpeedD</li>
 								<li>etCountD</li>
-								<li>etOffsetRad</li>
+								<li class="error" data-tip="Needs&nbsp;further&nbsp;testing.">etOffsetRad</li>
 								<li>etDist</li>
-								<li>etOffsetAbs</li>
+								<li class="error" data-tip="Needs&nbsp;further&nbsp;testing.">etOffsetAbs</li>
+							</ul></td>	
+						</tr></table>
+						
+						<p class="center">Bullet Transforms</p>
+						
+						<table id="transformTable"><tr>
+							<td><ul>
+								<li>nop</li>
+								<li class="error" data-tip="Needs&nbsp;further&nbsp;testing.">wait</li>
+								<li>dist</li>
+								<li>accel</li>
+								<li>angleAccel</li>
+							</ul></td>
+							<td><ul>
+								<li class="error" data-tip="Needs&nbsp;further&nbsp;testing.">angle</li>
+								<li>bounce</li>
+								<li>setSprite</li>
+								<li class="warning" data-tip="Not&nbsp;fully&nbsp;implemented.">delete</li>
+							</ul></td>
+							<td><ul>
+								<li class="warning" data-tip="Not&nbsp;fully&nbsp;implemented.">playSound</li>
+								<li>wrap</li>
+								<li>shoot</li>
+								<li class="warning" data-tip="Not&nbsp;fully&nbsp;implemented.">defineShoot</li>
+							</ul></td>
+							<td><ul>
+								<li>vel</li>
+								<li>velAdd</li>
+								<li class="warning" data-tip="Not&nbsp;fully&nbsp;implemented.">bright</li>
+								<li>velTime</li>
+								<li>saveAngle</li>
 							</ul></td>	
 						</tr></table>
 					</div>
@@ -570,7 +523,19 @@ void main()
 
 				<br><br>
 				<h4>Progress Tracker & Suggestions</h4>
-				<p>Work in progress.</p>
+				<p>Progress is kept track of both on this page and in the following Google Docs. If you want to leave suggestions for things to do, you can leave comments on the Docs using <a href="https://docs.google.com/document/d/1-fyJtX06pwvBeMNNz9BnRM-G6NAHCxIr57Sy0d6adoU/edit?usp=sharing">this link</a>.</p>
+				<p>For bug reporting or any other reason, you can contact me personally through the contact detail given on the <a onclick="$('#tab button')[0].click()">About</a> tab.</p><br>
+				
+				<div class="retractbox">
+					<p class="retracttitle">LiveECL Progress Tracker</p>
+					<div class="retract">
+						<iframe data-src="https://docs.google.com/document/d/e/2PACX-1vTslrAdhtR8Dr_G1pU9P2J40NczJRCe3i165ryLM1ddr8aiG04Bao8Ya5qd_GGwjLklZs5_oooAkUC3/pub?embedded=true"></iframe>
+					</div>
+					<div class="retracthint" onclick="retractDocs(event);">
+						Click to see more!<br>
+						<img src="assets/down.png">
+					</div>
+				</div>
 			</div>
 
 			<div id="documentation" class="tabcontent" onscroll="tabScroll(event)" onresize="tabScroll(event)">
