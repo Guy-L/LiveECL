@@ -325,7 +325,7 @@ void main()
 							<li>Ability to quickly share ECL scripts,</li>
 							<li>Feedback for uploaders <i>(plays, likes and saved)</i>,</li>
 							<li>Ability to easily find unplayed and popular/recent scripts,</li>
-							<li>Browsing by uploader name <span class="tiny">(may require account-creation to ensure authenticity?)</span><br>.</li>
+							<li>Browsing by uploader name <span class="tiny">(may require account-creation to ensure authenticity?)</span><br></li>
 						</ul>
 					</li>
 					<li>A fast, convenient editor.
@@ -347,7 +347,226 @@ void main()
 
 				<br><br>
 				<h4>ECL Support</h4>
-				<p>Work in progress.</p>
+				
+				<p>Only ECL instructions from Ten Desires are currently supported.
+				<br>Here is the full list:</p>
+				
+				<div class="retractbox">
+					<p class="retracttitle">0-93 (System)</p>
+					<div class="retract">
+						<table><tr>
+							<td><ul>
+								<li>nop</li>
+								<li>delete</li>
+								<li>ret</li>
+								<li>call</li>
+								<li>jmp</li>
+								<li>jmpEq</li>
+								<li>jmpNeq</li>
+								<li>callAsync</li>
+								<li>callAsyncId</li>
+								<li>killAsync</li>
+								<li>killAllAsync</li>
+								<li>wait</li>
+								<li>waitf (TOCHECK)</li>
+								<li>stackAlloc</li>
+							</ul></td>
+							<td><ul>
+								<li>pushi</li>
+								<li>seti</li>
+								<li>pushf</li>
+								<li>setf</li>
+								<li>addi</li>
+								<li>addf</li>
+								<li>subi</li>
+								<li>subf</li>
+								<li>muli</li>
+								<li>mulf</li>
+								<li>divi</li>
+								<li>divf</li>
+								<li>modi</li>
+								<li>eqi</li>
+								<li>eqf</li>
+							</ul></td>
+							<td><ul>
+								<li>neqi</li>
+								<li>neqf</li>
+								<li>lessi</li>
+								<li>lessf</li>
+								<li>leqi</li>
+								<li>leqf</li>
+								<li>greateri</li>
+								<li>greaterf</li>
+								<li>geqi</li>
+								<li>geqf</li>
+								<li>noti</li>
+								<li>notf</li>
+								<li>or</li>
+								<li>and</li>
+								<li>xor (TOCHECK)</li>
+							</ul></td>
+							<td><ul>
+								<li>bit_or (TOCHECK)</li>
+								<li>bit_and (TOCHECK)</li>
+								<li>deci</li>
+								<li>stackSin </li>
+								<li>stackCos</li>
+								<li>mathCirclePos</li>
+								<li>validRad</li>
+								<li>negi</li>
+								<li>negf</li>
+								<li>squareSum</li>
+								<li>squareSumRoot</li>
+								<li>mathAngle</li>
+								<li>stackSqrt</li>
+								<li>linearFunc</li>
+								<li>pointRotate</li>
+							</ul></td>	
+						</tr></table>
+					</div>
+					<div class="retracthint" onclick="retract(event);">
+						Click to see more!<br>
+						<img src="assets/down.png">
+					</div>
+				</div>
+				
+				<div class="retractbox">
+					<p class="retracttitle">0-93 (System)</p>
+					<div class="retract">
+						<table><tr>
+							<td><ul>
+								<li>nop</li>
+								<li>delete</li>
+								<li>ret</li>
+								<li>call</li>
+								<li>jmp</li>
+								<li>jmpEq</li>
+								<li>jmpNeq</li>
+								<li>callAsync</li>
+								<li>callAsyncId</li>
+								<li>killAsync</li>
+								<li>killAllAsync</li>
+								<li>wait</li>
+								<li>waitf</li>
+								<li>stackAlloc</li>
+							</ul></td>
+							<td><ul>
+								<li>pushi</li>
+								<li>seti</li>
+								<li>pushf</li>
+								<li>setf</li>
+								<li>addi</li>
+								<li>addf</li>
+								<li>subi</li>
+								<li>subf</li>
+								<li>muli</li>
+								<li>mulf</li>
+								<li>divi</li>
+								<li>divf</li>
+								<li>modi</li>
+								<li>eqi</li>
+								<li>eqf</li>
+							</ul></td>
+							<td><ul>
+								<li>neqi</li>
+								<li>neqf</li>
+								<li>lessi</li>
+								<li>lessf</li>
+								<li>leqi</li>
+								<li>leqf</li>
+								<li>greateri</li>
+								<li>greaterf</li>
+								<li>geqi</li>
+								<li>geqf</li>
+								<li>noti</li>
+								<li>notf</li>
+								<li>or</li>
+								<li>and</li>
+								<li>xor</li>
+							</ul></td>
+							<td><ul>
+								<li>bit_or</li>
+								<li>bit_and</li>
+								<li>deci</li>
+								<li>stackSin </li>
+								<li>stackCos</li>
+								<li>mathCirclePos</li>
+								<li>validRad</li>
+								<li>negi</li>
+								<li>negf</li>
+								<li>squareSum</li>
+								<li>squareSumRoot</li>
+								<li>mathAngle</li>
+								<li>stackSqrt</li>
+								<li>linearFunc</li>
+								<li>pointRotate</li>
+							</ul></td>	
+						</tr></table>
+					</div>
+					<div class="retracthint" onclick="retract(event);">
+						Click to see more!<br>
+						<img src="assets/down.png">
+					</div>
+				</div>
+				
+				<div class="retractbox">
+					<p class="retracttitle">500-562 (Misc)</p>
+					<div class="retract">
+						<table><tr>
+							<td><ul>
+								<li>diffI</li>
+							</ul></td>
+							<td><ul>
+								<li>diffF</li>
+							</ul></td>
+						</tr></table>
+					</div>
+					<div class="retracthint" onclick="retract(event);">
+						Click to see more!<br>
+						<img src="assets/down.png">
+					</div>
+				</div>
+				
+				<div class="retractbox">
+					<p class="retracttitle">600-640 (Bullets)</p>
+					<div class="retract">
+						<table><tr>
+							<td><ul>
+								<li>etNew</li>
+								<li>etOn</li>
+								<li>etSprite</li>
+								<li>etOffset</li>
+								<li>etAngle</li>
+							</ul></td>
+							<td><ul>
+								<li>etSpeed</li>
+								<li>etCount</li>
+								<li>etAim</li>
+								<li>etSound</li>
+								<li>etExSet</li>
+							</ul></td>
+							<td><ul>
+								<li>etExSet2</li>
+								<li>etEx</li>
+								<li>etEx2</li>
+								<li>etClearAll</li>
+								<li>etCopy</li>
+							</ul></td>
+							<td><ul>
+								<li>angleToPlayer</li>
+								<li>etSpeedD</li>
+								<li>etCountD</li>
+								<li>etOffsetRad</li>
+								<li>etDist</li>
+								<li>etOffsetAbs</li>
+							</ul></td>	
+						</tr></table>
+					</div>
+					<div class="retracthint" onclick="retract(event);">
+						Click to see more!<br>
+						<img src="assets/down.png">
+					</div>
+				</div>
 
 				<br><br>
 				<h4>Progress Tracker & Suggestions</h4>

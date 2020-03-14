@@ -12,7 +12,9 @@ $(document).ready(function() {
     $(".default").click();
     updateMedia();
 
-    $("body").html($("body").html().replace('{VERSION}','1.4.7'));
+    if (localStorage.getItem("script") != null) {
+     $("#edit").val(localStorage.getItem("script"));
+    }
 
     edit = CodeMirror.fromTextArea(document.getElementById("edit"), {
     	lineNumbers: true,
@@ -142,7 +144,13 @@ $(document).ready(function() {
                                                   .replace("No errors or warnings found!", "<span class=\"no-error\">No errors or war&#8203;nings found!</span>")
                                                   .replace(/invalid/g,"<span class=\"error\">invalid</span>")
                                                   .replace(/warning/g,"<span class=\"warning\">warning</span>")
-                                                  .replace(/thecl(:\(stdin\))*/g,"<span class=\"compLog\">Compiler</span>"));
+                                                  .replace(/thecl(:\(stdin\))*/g,"<span class=\"compLog\">Compiler</span>")
+                                                  .replace(/[0-9]+\,[0-9]+/g, function(e){
+                                                        var nums = e.split(",");
+                                                        return "<a data-tip=\"Click&nbsp;to&nbsp;go&nbsp;there!\"" +
+                                                                  "onclick=\"gotoLine("+(nums[0]-2) + "," + nums[1] + ");\">" +
+                                                                                        (nums[0]-1) + "," + nums[1] + "</a>";
+                                                  }));
         });
 
         socket.on('disconnect', function(){
@@ -151,7 +159,7 @@ $(document).ready(function() {
 
 
         edit.on("change", function () {
-			$("#edit").val(edit.getValue());
+			localStorage.setItem("script", edit.getValue());
 
             clearTimeout(typingTimer);
             typingTimer = setTimeout(function(){
