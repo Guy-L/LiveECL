@@ -757,29 +757,64 @@ div.retracthint img{
 }
 
 .invite{
-  width:80%;
   margin: 0 auto;
+  padding:10px;
+  width:400px;
+  height:100px;
   background-color:#313338;
-  border-radius:5px;
-}
-
-.invite div{
-  float:right;
-  border-radius:5px;
-}
-
-.invite img{
-  float:left;
   border-radius:15px;
-  width:100px;
-}
 
-.invite h6{
-  text-align:left;
+  display: flex;
+  align-items: center;
+
+  box-shadow: 0px 0px 10px #313338;
+  -o-box-shadow: 0px 0px 10px #313338;
+  -moz-box-shadow: 0px 0px 10px #313338;
+  -webkit-box-shadow: 0px 0px 10px #313338;
+
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  text-rendering: optimizeLegibility;
 }
 
 .invite p{
+  font-size:15px;
+  text-align:left;
+  text-indent: 0;
+  margin:0;
 
+  padding-left:25px;
+  padding-right:100px;
+
+  font-weight:400;
+}
+
+.invite span{
+  font-size:25px;
+  font-weight:bold;
+}
+
+.invite a{
+  border-radius:5px;
+  display:block;
+  padding:7px 15px;
+
+  background: none;
+  -webkit-background-clip: none;
+  -webkit-text-fill-color: unset;
+  text-decoration: none;
+
+  background-color:#38B980;
+  transition:0.2s;
+  color: white;
+}
+
+.invite a:hover{
+  background-color: #3CA374;
+}
+
+.invite img{
+  border-radius:15px;
+  width:100px;
 }
 
 @keyframes fadeEffect {

@@ -218,7 +218,7 @@ function retract(evt){
 	}
 }
 
-function retractDocs(evt){
+function retractSite(evt){
 	content = $($(evt.target).siblings(".retract"));
 	content.toggle();
 	
@@ -232,7 +232,6 @@ function retractDocs(evt){
 		content.find("iframe").data("src", content.find("iframe").attr("src"));
 	}
 }
-
 
 ////////////////// TERMINAL FUNCTIONS
 
