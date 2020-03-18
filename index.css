@@ -40,6 +40,7 @@ body{
   flex-wrap:wrap;
   align-items: center;
   padding-bottom:2px;
+  height:21px;
 
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -133,6 +134,7 @@ select{
   margin-left: 10px;
   line-height:18px;
   display: none;
+  height:18px;
 }
 
 .opt input[type=text]{
