@@ -7,7 +7,7 @@ var isRefreshing = false;
 var newWindow;
 
 $(document).ready(function() {
-    var socket = io.connect('https://live-ecl-hobby.herokuapp.com/');
+    var socket = io.connect('https://live-ecl.herokuapp.com/');
 
     $(".default").click();
     updateMedia();
